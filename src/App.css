@@ -19,6 +19,10 @@ footer {
   width: 100%; */
 }
 
+footer p {
+  margin: 0;
+}
+
 main {
   padding-top: 100px;
   min-height: calc(100vh - 121px);

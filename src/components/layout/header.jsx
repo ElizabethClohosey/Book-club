@@ -1,11 +1,9 @@
-
-
 import React from "react";
-const Header = ({ }) => {
 
+const Header = () => {
   return (
     <header>
-     Hello, I am a header
+      <p>Hello, I am a header</p>
     </header>
   );
 };
