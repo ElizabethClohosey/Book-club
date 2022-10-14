@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
+import React from "react";
 import BookSearch from "./pages/book-search";
 
 const SinglePageApp = () => {
