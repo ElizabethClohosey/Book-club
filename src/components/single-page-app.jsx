@@ -11,9 +11,8 @@ const SinglePageApp = () => {
   };
 
   const [bucketListBooks, dispatchBucketList] = useReducer((state, action) => {
-    console.log(state, action);
     switch (action.type) {
-      case "testing":
+      case "ADD_TO_BUCKET_LIST":
         return [...state, action.selectedVolume];
       default:
         return state;
@@ -41,10 +40,7 @@ const SinglePageApp = () => {
   console.log(bucketListBooks);
 
   const addToBucketList = (index) => {
-    console.log(index);
-    console.log(searchResults[index]);
     let selectedVolume = searchResults[index];
-
     let volumeInfo = selectedVolume.volumeInfo;
     console.log(volumeInfo);
 
@@ -52,10 +48,13 @@ const SinglePageApp = () => {
       (book) => book.id === selectedVolume.id
     );
     let duplicateTitle = bucketListBooks.some(
-      (book) => book.title === volumeInfo.title
+      (book) => book.volumeInfo.title === volumeInfo.title
+    );
+    let duplicateAuthor = bucketListBooks.some(
+      (book) => book.volumeInfo.authors[0] === volumeInfo.authors[0]
     );
 
-    if (duplicateId || duplicateTitle) {
+    if (duplicateId || (duplicateTitle && duplicateAuthor)) {
       console.log("Duplicate Book");
       // setUserMessage({
       //   type: "TBR_FORM_MESSAGE",
@@ -63,7 +62,7 @@ const SinglePageApp = () => {
       // });
       // setIsMessageErr(true);
     } else {
-      dispatchBucketList({ type: "testing", selectedVolume });
+      dispatchBucketList({ type: "ADD_TO_BUCKET_LIST", selectedVolume });
       // setUserMessage({
       //   type: "TBR_FORM_MESSAGE",
       //   message: `${volumeInfo.title} added to "To Be Read" List`,
