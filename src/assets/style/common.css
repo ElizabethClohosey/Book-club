@@ -1,0 +1,26 @@
+
+.card-wrapper {
+  background: red;
+  
+}
+
+.sm-card {
+  width: 5rem;
+}
+
+.card {
+  background: green;
+}
+
+.card-body {
+  border: 1px solid black;
+}
+
+.card-header {
+  border: 1px solid white;
+}
+
+.card-footer {
+  background: yellow;
+  border: 1px solid orange;
+}
