@@ -39,15 +39,25 @@ const BookSearch = () => {
       <section className="search-results">
         {Object.keys(searchResults).length > 0 &&
           searchResults.map((volume) => (
-            // <div className="card-wrapper" key={volume.id}>
+            <div key={volume.id} className="book-card-wrapper">
               <BookCard
-              key={volume.id}
-                cardHeader={volume.volumeInfo.title}
-                cardBody={volume.volumeInfo.title}
-                cardFooter={volume.volumeInfo.title}
-                isSmallCard={true}
+                title={volume.volumeInfo.title}
+                author={
+                  volume.volumeInfo.authors
+                    ? volume.volumeInfo.authors[0]
+                    : "N/A"
+                }
+                imgSrc={
+                  volume.volumeInfo.imageLinks &&
+                  volume.volumeInfo.imageLinks.thumbnail
+                    ? volume.volumeInfo.imageLinks.thumbnail
+                    : "#"
+                }
+                // handleClick={() => handleBookClick(volume, index)}
               />
-            // </div>
+              {/* Will open modal asking where to add book */}
+              <button>Add</button>
+            </div>
           ))}
       </section>
     </>
