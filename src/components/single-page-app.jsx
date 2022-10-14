@@ -12,9 +12,14 @@ const SinglePageApp = () => {
   };
 
   const [bucketListBooks, dispatchBucketList] = useReducer((state, action) => {
+    console.log(state, action);
     switch (action.type) {
       case "ADD_TO_BUCKET_LIST":
         return [...state, action.selectedVolume];
+      case "DELETE_FROM_BUCKET_LIST":
+        // setUserMessage(null);
+        // setRandomBook([]);
+        return state.filter((_, index) => index !== action.index);
       default:
         return state;
     }
@@ -92,6 +97,12 @@ const SinglePageApp = () => {
     }
   };
 
+  const removeFromBucketList = (index) => {
+    let selectedVolume = searchResults[index];
+    console.log("Deleting book at index", index);
+    dispatchBucketList({ type: "DELETE_FROM_BUCKET_LIST", index });
+  };
+
   useEffect(() => {
     const body = document.querySelector("body");
     if (showModal) {
@@ -118,6 +129,7 @@ const SinglePageApp = () => {
         handleBookClick={handleBookClick}
         handleModalClose={handleModalClose}
         openModalOnEnter={openModalOnEnter}
+        removeFromBucketList={removeFromBucketList}
       />
       {showModal && (
         <Modal

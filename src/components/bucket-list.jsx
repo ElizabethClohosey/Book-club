@@ -2,7 +2,12 @@ import React from "react";
 import BookCard from "./common/book-card";
 import { MdDelete } from "react-icons/md";
 
-const BucketList = ({ bucketListBooks, handleBookClick, openModalOnEnter }) => {
+const BucketList = ({
+  bucketListBooks,
+  handleBookClick,
+  openModalOnEnter,
+  removeFromBucketList,
+}) => {
   console.log(bucketListBooks);
   return (
     <section className="bucket-list">
@@ -34,6 +39,7 @@ const BucketList = ({ bucketListBooks, handleBookClick, openModalOnEnter }) => {
                   display: "flex",
                   alignItems: "center",
                 }}
+                onClick={() => removeFromBucketList(index)}
               >
                 <MdDelete />
               </button>
