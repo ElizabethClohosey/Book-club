@@ -1,26 +1,22 @@
 
-.card-wrapper {
-  background: red;
-  
+.book-card-wrapper {
+  background: white;
+  margin-right: .5rem;
+  min-width: 5rem;
 }
 
-.sm-card {
-  width: 5rem;
+.book-card-content {
+  background: white;
+  padding: .25rem;
 }
 
-.card {
-  background: green;
+.book-card img {
+  min-height: 100px;
+  height: 100px;
+  width: 100%;
 }
 
-.card-body {
-  border: 1px solid black;
-}
-
-.card-header {
-  border: 1px solid white;
-}
-
-.card-footer {
-  background: yellow;
-  border: 1px solid orange;
+.book-card p {
+  margin: 0;
+  font-size: .65rem;
 }
