@@ -5,6 +5,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 60px;
 }
 
 h1 {
@@ -17,6 +18,7 @@ footer {
   /* position: absolute;
   bottom: 0;
   width: 100%; */
+  height: 60px;
 }
 
 footer p {
@@ -24,7 +26,19 @@ footer p {
 }
 
 main {
-  padding-top: 100px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   /* viewport height minus padding and footer height */
-  min-height: calc(100vh - 143px); 
+  /* min-height: calc(100vh - 120px);  */
+  max-width: 768px;
+  height: 100vh;
+  margin: auto;
+  background: pink;
+}
+
+.search-results {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  overflow-x: scroll;
 }
