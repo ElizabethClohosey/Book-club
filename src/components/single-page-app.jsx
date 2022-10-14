@@ -37,12 +37,10 @@ const SinglePageApp = () => {
     //     return state;
     // }
   }, []);
-  console.log(bucketListBooks);
 
   const addToBucketList = (index) => {
     let selectedVolume = searchResults[index];
     let volumeInfo = selectedVolume.volumeInfo;
-    console.log(volumeInfo);
 
     let duplicateId = bucketListBooks.some(
       (book) => book.id === selectedVolume.id
@@ -80,6 +78,7 @@ const SinglePageApp = () => {
         handleSearchResults={handleSearchResults}
         searchResults={searchResults}
       />
+      <BucketList bucketListBooks={bucketListBooks} />
     </main>
   );
 };
