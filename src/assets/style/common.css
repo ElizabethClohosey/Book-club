@@ -5,7 +5,8 @@
 .book-card-wrapper {
   background: white;
   margin-right: .5rem;
-  min-width: 5rem;
+  min-width: 6rem;
+  width: 6rem;
 }
 
 .book-card-content {

@@ -1,7 +1,8 @@
 import React from "react";
 import BookCard from "./common/book-card";
+import { MdDelete } from "react-icons/md";
 
-const BucketList = ({ bucketListBooks }) => {
+const BucketList = ({ bucketListBooks, handleBookClick, openModalOnEnter }) => {
   console.log(bucketListBooks);
   return (
     <section className="bucket-list">
@@ -9,8 +10,9 @@ const BucketList = ({ bucketListBooks }) => {
         bucketListBooks.map((volume, index) => (
           <div key={volume.id} className="book-card-wrapper">
             <BookCard
-              // handleClick={() => handleBookClick(volume)}
-              // handleKeyDown={(e) => openModalOnEnter(volume, e)}
+              handleClick={() => handleBookClick(volume)}
+              handleKeyDown={(e) => openModalOnEnter(volume, e)}
+              key={volume.id}
               title={volume.volumeInfo.title}
               author={
                 volume.volumeInfo.authors ? volume.volumeInfo.authors[0] : "N/A"
@@ -22,7 +24,20 @@ const BucketList = ({ bucketListBooks }) => {
                   : "#"
               }
             />
-            {/* <button onClick={() => addToBucketList(index)}>Add</button> */}
+            <div
+              className="card-btn-bar"
+              style={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <button>Read</button>
+              <button
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <MdDelete />
+              </button>
+            </div>
           </div>
         ))}
     </section>

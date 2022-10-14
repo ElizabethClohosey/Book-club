@@ -9,6 +9,8 @@ const BookSearch = ({
   handleSearchResults,
   searchResults,
   addToBucketList,
+  handleBookClick,
+  openModalOnEnter,
 }) => {
   const searchRef = useRef(null);
 
@@ -32,36 +34,36 @@ const BookSearch = ({
     }
   };
 
-  const [expandedBook, setExpandedBook] = useState({});
-  const handleBookClick = (volume) => {
-    console.log("Opening modal with seleted book information");
-    setExpandedBook(volume);
-    setShowModal(true);
-  };
+  // const [expandedBook, setExpandedBook] = useState({});
+  // const handleBookClick = (volume) => {
+  //   console.log("Opening modal with seleted book information");
+  //   setExpandedBook(volume);
+  //   setShowModal(true);
+  // };
 
-  const [showModal, setShowModal] = useState(false);
-  const handleModalClose = () => {
-    setShowModal(false);
-  };
+  // const [showModal, setShowModal] = useState(false);
+  // const handleModalClose = () => {
+  //   setShowModal(false);
+  // };
 
-  const openModalOnEnter = (volume, e) => {
-    if (e.key === "Enter") {
-      console.log("do validate");
-      setExpandedBook(volume);
-      setShowModal(true);
-    }
-  };
+  // const openModalOnEnter = (volume, e) => {
+  //   if (e.key === "Enter") {
+  //     console.log("do validate");
+  //     setExpandedBook(volume);
+  //     setShowModal(true);
+  //   }
+  // };
 
-  useEffect(() => {
-    const body = document.querySelector("body");
-    if (showModal) {
-      // Disable scroll
-      body.style.overflow = "hidden";
-    } else {
-      // Enable scroll
-      body.style.overflow = "auto";
-    }
-  }, [showModal]);
+  // useEffect(() => {
+  //   const body = document.querySelector("body");
+  //   if (showModal) {
+  //     // Disable scroll
+  //     body.style.overflow = "hidden";
+  //   } else {
+  //     // Enable scroll
+  //     body.style.overflow = "auto";
+  //   }
+  // }, [showModal]);
 
   return (
     <>
@@ -93,7 +95,7 @@ const BookSearch = ({
             </div>
           ))}
       </section>
-      {showModal && (
+      {/* {showModal && (
         <Modal
           modalHeader={
             <>
@@ -120,7 +122,7 @@ const BookSearch = ({
           }
           handleModalClose={handleModalClose}
         />
-      )}
+      )} */}
     </>
   );
 };

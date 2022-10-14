@@ -1,6 +1,7 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import BucketList from "./bucket-list";
 import BookSearch from "./pages/book-search";
+import Modal from "./common/modal";
 
 const SinglePageApp = () => {
   const [searchResults, setSearchResults] = useState({});
@@ -71,14 +72,81 @@ const SinglePageApp = () => {
     // setRandomBook({});
   };
 
+  const [expandedBook, setExpandedBook] = useState({});
+  const handleBookClick = (volume) => {
+    console.log("Opening modal with seleted book information");
+    setExpandedBook(volume);
+    setShowModal(true);
+  };
+
+  const [showModal, setShowModal] = useState(false);
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
+  const openModalOnEnter = (volume, e) => {
+    if (e.key === "Enter") {
+      console.log("do validate");
+      setExpandedBook(volume);
+      setShowModal(true);
+    }
+  };
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (showModal) {
+      // Disable scroll
+      body.style.overflow = "hidden";
+    } else {
+      // Enable scroll
+      body.style.overflow = "auto";
+    }
+  }, [showModal]);
+
   return (
     <main>
       <BookSearch
         addToBucketList={addToBucketList}
         handleSearchResults={handleSearchResults}
         searchResults={searchResults}
+        handleBookClick={handleBookClick}
+        handleModalClose={handleModalClose}
+        openModalOnEnter={openModalOnEnter}
       />
-      <BucketList bucketListBooks={bucketListBooks} />
+      <BucketList
+        bucketListBooks={bucketListBooks}
+        handleBookClick={handleBookClick}
+        handleModalClose={handleModalClose}
+        openModalOnEnter={openModalOnEnter}
+      />
+      {showModal && (
+        <Modal
+          modalHeader={
+            <>
+              <img
+                src={expandedBook.volumeInfo.imageLinks.thumbnail}
+                alt="book cover"
+              ></img>
+              <p>{expandedBook.volumeInfo.averageRating} Star Rating</p>
+            </>
+          }
+          body={
+            <>
+              <strong>
+                <p>{expandedBook.volumeInfo.title}</p>
+              </strong>
+
+              <p>{expandedBook.volumeInfo.authors}</p>
+              <p>
+                {expandedBook.volumeInfo.description
+                  ? expandedBook.volumeInfo.description
+                  : "No description available"}
+              </p>
+            </>
+          }
+          handleModalClose={handleModalClose}
+        />
+      )}
     </main>
   );
 };

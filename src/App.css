@@ -37,10 +37,13 @@ main {
   background: pink;
 }
 
-.search-results {
+.search-results,
+.bucket-list {
   display: flex;
   flex-wrap: nowrap;
   width: 90%;
   margin: auto;
   overflow-x: scroll;
+  margin-bottom: 1rem;
 }
+
