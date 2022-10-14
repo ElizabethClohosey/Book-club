@@ -5,18 +5,21 @@ import TextInput from "../form/text-input";
 import BookCard from "../common/book-card";
 import Modal from "../common/modal";
 
-const BookSearch = () => {
+const BookSearch = ({
+  handleSearchResults,
+  searchResults,
+  addToBucketList,
+}) => {
   const searchRef = useRef(null);
 
-  const [searchResults, setSearchResults] = useState({});
-  console.log(searchResults);
   const findBooks = async (e) => {
     e.preventDefault();
     if (searchRef.current.value) {
       const result = await axios(
         `https://www.googleapis.com/books/v1/volumes?q=${searchRef.current.value}&printType=books&startIndex=0&maxResults=10`
       );
-      setSearchResults(result.data.items);
+      // setSearchResults(result.data.items);
+      handleSearchResults(result.data.items);
       searchRef.current.value = "";
     } else {
       console.log("Nope");
@@ -68,15 +71,11 @@ const BookSearch = () => {
       </form>
       <section className="search-results">
         {Object.keys(searchResults).length > 0 &&
-          searchResults.map((volume) => (
-            <div
-              key={volume.id}
-              className="book-card-wrapper"
-              onClick={() => handleBookClick(volume)}
-              onKeyDown={(e) => openModalOnEnter(volume, e)}
-              tabIndex={0}
-            >
+          searchResults.map((volume, index) => (
+            <div key={volume.id} className="book-card-wrapper">
               <BookCard
+                handleClick={() => handleBookClick(volume)}
+                handleKeyDown={(e) => openModalOnEnter(volume, e)}
                 title={volume.volumeInfo.title}
                 author={
                   volume.volumeInfo.authors
@@ -89,10 +88,8 @@ const BookSearch = () => {
                     ? volume.volumeInfo.imageLinks.thumbnail
                     : "#"
                 }
-                // handleClick={() => handleBookClick(volume, index)}
               />
-              {/* Will open modal asking where to add book */}
-              <button>Add</button>
+              <button onClick={() => addToBucketList(index)}>Add</button>
             </div>
           ))}
       </section>

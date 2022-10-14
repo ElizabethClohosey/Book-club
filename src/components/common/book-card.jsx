@@ -1,10 +1,21 @@
-
 import React from "react";
 
-const BookCard = ({ title, author, imgSrc, isLargeCard, handleClick }) => {
+const BookCard = ({
+  title,
+  author,
+  imgSrc,
+  isLargeCard,
+  handleClick,
+  handleKeyDown,
+}) => {
   return (
-    <div className="book-card" onClick={handleClick}>
-      <img src={imgSrc ? imgSrc : ""} alt="book cover"/>
+    <div
+      tabIndex={0}
+      className="book-card"
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
+    >
+      <img src={imgSrc ? imgSrc : ""} alt="book cover" />
       <div className="book-card-content">
         <p>
           <strong>
@@ -24,10 +35,6 @@ const BookCard = ({ title, author, imgSrc, isLargeCard, handleClick }) => {
 };
 
 export default BookCard;
-
-
-
-
 
 // const BookCard = ({
 //   cardHeader,
@@ -54,5 +61,3 @@ export default BookCard;
 // };
 
 // export default BookCard;
-
-
