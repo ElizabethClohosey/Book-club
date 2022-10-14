@@ -1,0 +1,87 @@
+
+input[type="text"] {
+  height: 1.5rem;
+  border-radius: .25rem;
+  padding-left: .25rem;
+    /* Dark mode color  */
+    /* background: var(--purblue); */
+}
+
+/* .app-dark input[type="text"] {
+  background: rgb(42, 42, 42);
+  color: var(--light);
+} */
+
+
+
+.valid-input {
+  border: 1px solid var(--purblue)
+}
+
+
+
+.invalid-input {
+  border: 1px solid var(--err);
+  outline: 1px solid var(--err);
+}
+
+.valid-input:focus {
+  border-top: 1px solid var(--purblue);
+  border-right: 1px solid var(--purblue);
+  border-bottom: 1px solid var(--purblue);
+  border-left: 10px solid var(--purblue);
+  box-shadow: 0 0 10px var(--purblue);
+  outline: none;
+
+}
+
+.app-dark .valid-input:focus {
+  border-top: 1px solid var(--light);
+  border-right: 1px solid var(--light);
+  border-bottom: 1px solid var(--light);
+  border-left: 10px solid var(--light);
+  box-shadow: 0 0 5px var(--gray-blue);
+  outline: none;
+}
+
+.invalid-input:focus {
+  border-top: 1px solid var(--err);
+  border-right: 1px solid var(--err);
+  border-bottom: 1px solid var(--err);
+  border-left: 10px solid var(--err);
+  outline: 1px solid var(--err);
+  box-shadow: 0 0 10px var(--err);
+}
+
+form {
+  max-width: 420px;
+  margin: auto;
+  background: transparent;
+  border-radius: .25rem;
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .5rem;
+}
+
+.form-group label {
+  margin-bottom: .25rem;
+}
+
+.validation-icon {
+  color: var(--err);
+  position: absolute;
+  right: 5px;
+  top: .45rem;
+  font-size: 1.25rem;
+}
+
+.validation-err {
+  border: 2px solid transparent;
+  outline: 1px solid var(--err);
+  box-shadow: 0 0 5px var(--err);
+}
+

@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
+// import { MdSearch } from "react-icons/md";
+import BookSearch from "../pages/book-search";
 
 const Home = () => {
   return (
-    <>
-      <h1>Rebuilding - Check back Nov 30th</h1>
-      <br />
-      <br />
-      <br />
-      <input type="text" />
-      <p>Does input zoom on focus?</p>
-    </>
+    <main style={{ background: "pink" }}>
+      <h1>This will eventually be the home page</h1>
+      <BookSearch />
+    </main>
   );
 };
 export default Home;

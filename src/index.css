@@ -1,3 +1,29 @@
+@import "../src/App.css";
+@import "../src/assets/style/forms.css";
+
+:root {
+  --black: #0b0b0d;
+  --white: white;
+
+  /* Theme */
+  --light: rgb(226, 239, 241);
+  --bright: rgb(182, 213, 225);
+  --blue-gray: #65799b;
+  --purblue: #555273;
+  --darkMode-bg: #2a2a2a;
+
+  /* User Messages  */
+  --err-backgroud: #ffe0e0;
+  --err-text: #5d1212;
+  /* --err: #b10000; */
+  --err: #ff0000;
+  --success-background: #d8ffce;
+  --success-text: #114c2a;
+  --information-background: #cef9ff;
+  --information-text: #16405b;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
