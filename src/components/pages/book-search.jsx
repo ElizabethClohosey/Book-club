@@ -3,6 +3,7 @@ import axios from "axios";
 // import { MdSearch } from "react-icons/md";
 import TextInput from "../form/text-input";
 import BookCard from "../common/book-card";
+import Modal from "../common/modal";
 
 const BookSearch = () => {
   const searchRef = useRef(null);
@@ -28,7 +29,36 @@ const BookSearch = () => {
     }
   };
 
-  useEffect(() => {}, []);
+  const [expandedBook, setExpandedBook] = useState({});
+  const handleBookClick = (volume) => {
+    console.log("Opening modal with seleted book information");
+    setExpandedBook(volume);
+    setShowModal(true);
+  };
+
+  const [showModal, setShowModal] = useState(false);
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
+  const openModalOnEnter = (volume, e) => {
+    if (e.key === "Enter") {
+      console.log("do validate");
+      setExpandedBook(volume);
+      setShowModal(true);
+    }
+  };
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (showModal) {
+      // Disable scroll
+      body.style.overflow = "hidden";
+    } else {
+      // Enable scroll
+      body.style.overflow = "auto";
+    }
+  }, [showModal]);
 
   return (
     <>
@@ -39,7 +69,13 @@ const BookSearch = () => {
       <section className="search-results">
         {Object.keys(searchResults).length > 0 &&
           searchResults.map((volume) => (
-            <div key={volume.id} className="book-card-wrapper">
+            <div
+              key={volume.id}
+              className="book-card-wrapper"
+              onClick={() => handleBookClick(volume)}
+              onKeyDown={(e) => openModalOnEnter(volume, e)}
+              tabIndex={0}
+            >
               <BookCard
                 title={volume.volumeInfo.title}
                 author={
@@ -60,6 +96,34 @@ const BookSearch = () => {
             </div>
           ))}
       </section>
+      {showModal && (
+        <Modal
+          modalHeader={
+            <>
+              <img
+                src={expandedBook.volumeInfo.imageLinks.thumbnail}
+                alt="book cover"
+              ></img>
+              <p>{expandedBook.volumeInfo.averageRating} Star Rating</p>
+            </>
+          }
+          body={
+            <>
+              <strong>
+                <p>{expandedBook.volumeInfo.title}</p>
+              </strong>
+
+              <p>{expandedBook.volumeInfo.authors}</p>
+              <p>
+                {expandedBook.volumeInfo.description
+                  ? expandedBook.volumeInfo.description
+                  : "No description available"}
+              </p>
+            </>
+          }
+          handleModalClose={handleModalClose}
+        />
+      )}
     </>
   );
 };
