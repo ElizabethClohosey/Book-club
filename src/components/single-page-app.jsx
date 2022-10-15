@@ -25,24 +25,27 @@ const SinglePageApp = () => {
         return state;
     }
   }, []);
-  // const [readList, dispatchReadList] = useReducer((state, action) => {
-  //   // console.log(state, action);
-  //   switch (action.type) {
-  //     case "ADD_TO_READ_LIST":
-  //       // console.log("will this work?");
-  //       return state.filter((_, index) => index !== action.index);
-  //     default:
-  //       return state;
-  //   }
-  // }, []);
-  // console.log(readList);
 
-  const [readList, setReadList] = useState([]);
+  const [readList, dispatchReadList] = useReducer((state, action) => {
+    console.log(state, action);
+    switch (action.type) {
+      case "ADD_TO_READ_LIST":
+        // console.log("will this work?");
+        // return state.filter((_, index) => index === action.index);
+        return [...state, action.selectedVolume];
+      default:
+        return state;
+    }
+  }, []);
+  console.log(readList);
+
+  // const [readList, setReadList] = useState([]);
   const addToReadList = (volume, index) => {
-    let selectedBook = bucketListBooks[index];
-    console.log(selectedBook);
+    let selectedVolume = bucketListBooks[index];
+    console.log(selectedVolume);
     // console.log("Volume: ", volume, "Index: ", index);
-    dispatchBucketList({ type: "ADD_TO_READ_LIST", selectedBook });
+    dispatchBucketList({ type: "DELETE_FROM_BUCKET_LIST", index });
+    dispatchReadList({ type: "ADD_TO_READ_LIST", selectedVolume });
   };
 
   const addToBucketList = (index) => {

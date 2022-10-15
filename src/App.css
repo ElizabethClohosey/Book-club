@@ -35,10 +35,12 @@ main {
   height: 100vh;
   margin: auto;
   background: pink;
+  overflow: scroll;
 }
 
 .search-results,
-.bucket-list {
+.bucket-list,
+.read-list {
   display: flex;
   flex-wrap: nowrap;
   width: 90%;

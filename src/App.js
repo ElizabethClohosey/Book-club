@@ -22,7 +22,7 @@ function App() {
       <SinglePageApp />
       {/* <Home /> */}
       {/* <BookSearch /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
