@@ -7,8 +7,9 @@ const BucketList = ({
   handleBookClick,
   openModalOnEnter,
   removeFromBucketList,
+  addToReadList,
 }) => {
-  console.log(bucketListBooks);
+  // console.log(bucketListBooks);
   return (
     <section className="bucket-list">
       {Object.keys(bucketListBooks).length > 0 &&
@@ -33,7 +34,7 @@ const BucketList = ({
               className="card-btn-bar"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <button>Read</button>
+              <button onClick={() => addToReadList(volume, index)}>Read</button>
               <button
                 style={{
                   display: "flex",

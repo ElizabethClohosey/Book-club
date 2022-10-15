@@ -1,18 +1,19 @@
 import React, { useState, useReducer, useEffect } from "react";
 import BucketList from "./bucket-list";
 import BookSearch from "./pages/book-search";
+import ReadList from "./read-list";
 import Modal from "./common/modal";
 
 const SinglePageApp = () => {
   const [searchResults, setSearchResults] = useState({});
-  console.log(searchResults);
+  // console.log(searchResults);
 
   const handleSearchResults = (data) => {
     setSearchResults(data);
   };
 
   const [bucketListBooks, dispatchBucketList] = useReducer((state, action) => {
-    console.log(state, action);
+    // console.log(state, action);
     switch (action.type) {
       case "ADD_TO_BUCKET_LIST":
         return [...state, action.selectedVolume];
@@ -23,26 +24,26 @@ const SinglePageApp = () => {
       default:
         return state;
     }
-    // switch (action.type) {
-    //   case "ADD_TO_TO_BE_READ":
-    //     return [
-    //       ...state,
-    //       {
-    //         id: action.id,
-    //         title: action.title,
-    //         author: action.author,
-    //         genre: action.genre,
-    //         img: action.img,
-    //       },
-    //     ];
-    //   case "REMOVE_FROM_TO_BE_READ":
-    //     setUserMessage(null);
-    //     setRandomBook([]);
-    //     return state.filter((_, index) => index !== action.index);
-    //   default:
-    //     return state;
-    // }
   }, []);
+  // const [readList, dispatchReadList] = useReducer((state, action) => {
+  //   // console.log(state, action);
+  //   switch (action.type) {
+  //     case "ADD_TO_READ_LIST":
+  //       // console.log("will this work?");
+  //       return state.filter((_, index) => index !== action.index);
+  //     default:
+  //       return state;
+  //   }
+  // }, []);
+  // console.log(readList);
+
+  const [readList, setReadList] = useState([]);
+  const addToReadList = (volume, index) => {
+    let selectedBook = bucketListBooks[index];
+    console.log(selectedBook);
+    // console.log("Volume: ", volume, "Index: ", index);
+    dispatchBucketList({ type: "ADD_TO_READ_LIST", selectedBook });
+  };
 
   const addToBucketList = (index) => {
     let selectedVolume = searchResults[index];
@@ -79,7 +80,6 @@ const SinglePageApp = () => {
 
   const [expandedBook, setExpandedBook] = useState({});
   const handleBookClick = (volume) => {
-    console.log("Opening modal with seleted book information");
     setExpandedBook(volume);
     setShowModal(true);
   };
@@ -91,7 +91,6 @@ const SinglePageApp = () => {
 
   const openModalOnEnter = (volume, e) => {
     if (e.key === "Enter") {
-      console.log("do validate");
       setExpandedBook(volume);
       setShowModal(true);
     }
@@ -130,7 +129,9 @@ const SinglePageApp = () => {
         handleModalClose={handleModalClose}
         openModalOnEnter={openModalOnEnter}
         removeFromBucketList={removeFromBucketList}
+        addToReadList={addToReadList}
       />
+      <ReadList readList={readList} />
       {showModal && (
         <Modal
           modalHeader={
