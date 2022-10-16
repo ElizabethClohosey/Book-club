@@ -28,14 +28,34 @@
 
 .user-message-wrapper {
   position: absolute;
-  top: 20px;
+  top: 35px;
   z-index: 99;
+  width: 100%;
+  text-align: center;
+}
+
+.user-message {
+  /* position: absolute;
+  top: 35px;
+  z-index: 99; */
+  padding: .15rem;
+
+}
+
+.user-message p {
+  margin: 0;
 }
 
 .user-message.error {
-  background: red;
-  color: white;
+  background: var(--err-backgroud);
+  color: var(--err-text);
 }
+
+.user-message.success {
+  background: var(--success-background);
+  color: var(--success-text);
+}
+
 
 /* Modal  */
 .modal-wrapper {

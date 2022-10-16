@@ -76,6 +76,11 @@ const SinglePageApp = () => {
       //   message: "Unable to add duplicate book to list",
       // });
       // setIsMessageErr(true);
+      handleUserMessage({
+        // type: "TESTING",
+        message: "Unable to add duplicate book",
+        isErr: true,
+      });
     } else {
       dispatchBucketList({ type: "ADD_TO_BUCKET_LIST", selectedVolume });
       // setUserMessage({
@@ -84,6 +89,11 @@ const SinglePageApp = () => {
       // });
       // setIsMessageErr(false);
       // setIsInputValid(true);
+      handleUserMessage({
+        // type: "TESTING",
+        message: "[Book Name] added tp 'Book Bucket List'",
+        isErr: false,
+      });
     }
     // setRandomBook({});
   };

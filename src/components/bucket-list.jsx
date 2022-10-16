@@ -8,9 +8,27 @@ const BucketList = ({
   openModalOnEnter,
   removeFromBucketList,
   addToReadList,
+  handleUserMessage,
 }) => {
   const [showList, setShowList] = useState(true);
   // console.log(bucketListBooks);
+
+  const handleRead = (volume, index) => {
+    handleUserMessage({
+      type: "",
+      message: "[Book name] added to 'Read' list",
+    });
+    addToReadList(volume, index);
+  };
+
+  const handleDelete = (index) => {
+    handleUserMessage({
+      type: "",
+      message: "[Book name] removed from 'Bucket' list",
+      isErr: false,
+    });
+    removeFromBucketList(index);
+  };
   return (
     <section className="list-wrapper">
       <button onClick={() => setShowList(!showList)}>
@@ -42,7 +60,7 @@ const BucketList = ({
                   className="card-btn-bar"
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  <button onClick={() => addToReadList(volume, index)}>
+                  <button onClick={() => handleRead(volume, index)}>
                     Read
                   </button>
                   <button
@@ -50,7 +68,7 @@ const BucketList = ({
                       display: "flex",
                       alignItems: "center",
                     }}
-                    onClick={() => removeFromBucketList(index)}
+                    onClick={() => handleDelete(index)}
                   >
                     <MdDelete />
                   </button>

@@ -35,11 +35,20 @@ const BookSearch = ({
       // setIsMessageErr(true);
       handleUserMessage({
         type: "TESTING",
-        message: "testing - add serach shit",
+        message: "Add some search criteria, yo!",
         isErr: true,
       });
     }
   };
+
+  // const handleAdd = (index) => {
+  //   handleUserMessage({
+  //     type: "TESTING",
+  //     message: "[Book Name] added to 'Book Bucket List'",
+  //     isErr: false,
+  //   });
+  //   addToBucketList(index);
+  // };
 
   // const [expandedBook, setExpandedBook] = useState({});
   // const handleBookClick = (volume) => {
@@ -98,7 +107,7 @@ const BookSearch = ({
                     : "#"
                 }
               />
-              <button onClick={() => addToBucketList(index)}>Add</button>
+              <button onClick={() =>     addToBucketList(index)}>Add</button>
             </div>
           ))}
       </section>
