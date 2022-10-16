@@ -2,6 +2,7 @@
 /* Layout  */
 header {
   background: green;
+  background: white;
   position: fixed;
   top: 0;
   width: 100%;
@@ -38,14 +39,29 @@ main {
   overflow: scroll;
 }
 
+.list-wrapper {
+  border: 1px solid black;
+  background: white;
+  margin-bottom: 1rem;
+}
+
+.list-wrapper button:first-of-type {
+  width: 100%;
+  padding: .5rem 0;
+}
+
 .search-results,
 .bucket-list,
 .read-list {
   display: flex;
   flex-wrap: nowrap;
   width: 90%;
-  margin: auto;
   overflow-x: scroll;
-  margin-bottom: 1rem;
+  /* margin: 1rem 0; */
+  margin: 1rem auto;
 }
+
+
+
+
 

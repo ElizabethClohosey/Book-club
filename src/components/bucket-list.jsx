@@ -9,12 +9,12 @@ const BucketList = ({
   removeFromBucketList,
   addToReadList,
 }) => {
-  const [showList, setShowList] = useState(false);
+  const [showList, setShowList] = useState(true);
   // console.log(bucketListBooks);
   return (
     <section className="list-wrapper">
       <button onClick={() => setShowList(!showList)}>
-        Show Book Bucket List
+        {showList ? "Hide Book Bucket List" : "Show Book Bucket List"}
       </button>
       {showList && (
         <section className="bucket-list">

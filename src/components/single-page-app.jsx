@@ -2,6 +2,7 @@ import React, { useState, useReducer, useEffect } from "react";
 import BucketList from "./bucket-list";
 import BookSearch from "./pages/book-search";
 import ReadList from "./read-list";
+import RandomBook from "./random-book";
 import Modal from "./common/modal";
 
 const SinglePageApp = () => {
@@ -135,6 +136,7 @@ const SinglePageApp = () => {
         addToReadList={addToReadList}
       />
       <ReadList readList={readList} />
+      <RandomBook bucketListBooks={bucketListBooks} />
       {showModal && (
         <Modal
           modalHeader={
