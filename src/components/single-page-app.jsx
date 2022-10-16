@@ -101,8 +101,8 @@ const SinglePageApp = () => {
   };
 
   const removeFromBucketList = (index) => {
-    let selectedVolume = searchResults[index];
-    console.log("Deleting book at index", index);
+    // let selectedVolume = searchResults[index];
+    // console.log("Deleting book at index", index);
     dispatchBucketList({ type: "DELETE_FROM_BUCKET_LIST", index });
   };
 
