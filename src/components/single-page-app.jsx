@@ -3,6 +3,7 @@ import BucketList from "./bucket-list";
 import BookSearch from "./pages/book-search";
 import ReadList from "./read-list";
 import RandomBook from "./random-book";
+import UserMessage from "./common/user-message";
 import Modal from "./common/modal";
 
 const SinglePageApp = () => {
@@ -40,6 +41,11 @@ const SinglePageApp = () => {
   }, []);
   console.log(readList);
 
+  const [userMessage, setUserMessage] = useState({});
+  console.log(userMessage);
+  const handleUserMessage = (userMessage) => {
+    setUserMessage(userMessage);
+  };
   // const [readList, setReadList] = useState([]);
   const addToReadList = (volume, index) => {
     let selectedVolume = bucketListBooks[index];
@@ -126,6 +132,7 @@ const SinglePageApp = () => {
         handleBookClick={handleBookClick}
         handleModalClose={handleModalClose}
         openModalOnEnter={openModalOnEnter}
+        handleUserMessage={handleUserMessage}
       />
       <BucketList
         bucketListBooks={bucketListBooks}
@@ -134,9 +141,16 @@ const SinglePageApp = () => {
         openModalOnEnter={openModalOnEnter}
         removeFromBucketList={removeFromBucketList}
         addToReadList={addToReadList}
+        handleUserMessage={handleUserMessage}
       />
       <ReadList readList={readList} />
       <RandomBook bucketListBooks={bucketListBooks} />
+      {userMessage && (
+        <UserMessage
+          message={userMessage.message}
+          isErrMessage={userMessage.isErr}
+        />
+      )}
       {showModal && (
         <Modal
           modalHeader={

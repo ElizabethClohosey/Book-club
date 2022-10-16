@@ -26,7 +26,16 @@
 }
 
 
+.user-message-wrapper {
+  position: absolute;
+  top: 20px;
+  z-index: 99;
+}
 
+.user-message.error {
+  background: red;
+  color: white;
+}
 
 /* Modal  */
 .modal-wrapper {

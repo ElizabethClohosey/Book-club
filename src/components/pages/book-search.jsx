@@ -11,6 +11,7 @@ const BookSearch = ({
   addToBucketList,
   handleBookClick,
   openModalOnEnter,
+  handleUserMessage,
 }) => {
   const searchRef = useRef(null);
 
@@ -23,6 +24,7 @@ const BookSearch = ({
       // setSearchResults(result.data.items);
       handleSearchResults(result.data.items);
       searchRef.current.value = "";
+      handleUserMessage(null);
     } else {
       console.log("Nope");
       // setIsInputValid(false);
@@ -31,6 +33,11 @@ const BookSearch = ({
       //   message: "Please add search criteria",
       // });
       // setIsMessageErr(true);
+      handleUserMessage({
+        type: "TESTING",
+        message: "testing - add serach shit",
+        isErr: true,
+      });
     }
   };
 
