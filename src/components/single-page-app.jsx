@@ -136,6 +136,7 @@ const SinglePageApp = () => {
   return (
     <main>
       <section className="search-section">
+        <h2>Book Search</h2>
         <BookSearch
           addToBucketList={addToBucketList}
           handleSearchResults={handleSearchResults}
@@ -146,20 +147,30 @@ const SinglePageApp = () => {
           handleUserMessage={handleUserMessage}
         />
       </section>
-      <BucketList
-        bucketListBooks={bucketListBooks}
-        handleBookClick={handleBookClick}
-        handleModalClose={handleModalClose}
-        openModalOnEnter={openModalOnEnter}
-        removeFromBucketList={removeFromBucketList}
-        addToReadList={addToReadList}
-        handleUserMessage={handleUserMessage}
-      />
-      <ReadList readList={readList} />
-      <RandomBook
-        bucketListBooks={bucketListBooks}
-        handleUserMessage={handleUserMessage}
-      />
+
+      <section className="book-lists-section">
+        <h2>Book Lists</h2>
+        <BucketList
+          bucketListBooks={bucketListBooks}
+          handleBookClick={handleBookClick}
+          handleModalClose={handleModalClose}
+          openModalOnEnter={openModalOnEnter}
+          removeFromBucketList={removeFromBucketList}
+          addToReadList={addToReadList}
+          handleUserMessage={handleUserMessage}
+        />
+
+        <ReadList readList={readList} />
+      </section>
+
+      <section className="random-book-section">
+        <h2>Random Book Selection</h2>
+        <RandomBook
+          bucketListBooks={bucketListBooks}
+          handleUserMessage={handleUserMessage}
+        />
+      </section>
+
       {userMessage && (
         <UserMessage
           message={userMessage.message}

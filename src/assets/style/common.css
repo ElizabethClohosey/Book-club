@@ -1,7 +1,9 @@
 
 
 
-/* Book Card  */
+/* ============ 
+/* Book Card  
+/* ============ */
 .book-card-wrapper {
   background: white;
   margin-right: .5rem;
@@ -25,7 +27,9 @@
   font-size: .65rem;
 }
 
-
+/* ============ 
+/* User Messages  
+/* ============ */
 .user-message-wrapper {
   position: fixed;
   top: 35px;
@@ -58,7 +62,9 @@
 }
 
 
-/* Modal  */
+/* ============ 
+/* Modal 
+/* ============ */
 .modal-wrapper {
   height: 100vh;
   width: 100vw;
@@ -102,3 +108,31 @@ right: 0; */
   max-width: 75%;
 
 }
+
+
+/* ============ 
+/* Buttons
+/* ============ */
+.list-btns {
+  width: 100%;
+  padding: .5rem .25rem;
+  background: var(--light);
+  border: none;
+  text-decoration: underline;
+}
+
+
+
+
+/* ============ 
+/* Misc
+/* ============ */
+hr {
+  margin: 1rem 0;
+}
+
+hr.dark {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(101, 121, 155, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+} 

@@ -5,8 +5,8 @@ const ReadList = ({ readList }) => {
   console.log(readList);
   const [showList, setShowList] = useState(true);
   return (
-    <section className="list-wrapper">
-      <button className="list-btn" onClick={() => setShowList(!showList)}>
+    <section className="section-content">
+      <button className="list-btns" onClick={() => setShowList(!showList)}>
         {showList ? "Hide Read List" : "Show Read List"}
       </button>
       {showList && (
@@ -15,9 +15,6 @@ const ReadList = ({ readList }) => {
             readList.map((volume) => (
               <div key={volume.id} className="book-card-wrapper">
                 <BookCard
-                  //  handleClick={() => handleBookClick(volume)}
-                  //  handleKeyDown={(e) => openModalOnEnter(volume, e)}
-
                   title={volume.volumeInfo.title}
                   author={
                     volume.volumeInfo.authors

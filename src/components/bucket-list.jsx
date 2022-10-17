@@ -30,8 +30,8 @@ const BucketList = ({
     removeFromBucketList(index);
   };
   return (
-    <section className="list-wrapper">
-      <button onClick={() => setShowList(!showList)}>
+    <section className="section-content">
+      <button className="list-btns" onClick={() => setShowList(!showList)}>
         {showList ? "Hide Book Bucket List" : "Show Book Bucket List"}
       </button>
       {showList && (
