@@ -20,7 +20,7 @@ const ReadList = ({ bucketListBooks, handleUserMessage }) => {
       console.log("No random book for you");
       handleUserMessage({
         type: "",
-        message: "No random book for you!",
+        message: "Your Book Bucket List is empty",
         isErr: true,
       });
       // setIsMessageErr(true);

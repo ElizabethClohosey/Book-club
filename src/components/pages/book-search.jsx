@@ -84,7 +84,12 @@ const BookSearch = ({
   return (
     <>
       <form>
-        <TextInput ref={searchRef} isValid={true} focusOnLoad={true} />
+        <TextInput
+          ref={searchRef}
+          label="Search by book Title or Author"
+          isValid={true}
+          focusOnLoad={true}
+        />
         <button onClick={findBooks}>{/* <MdSearch /> */} Search</button>
       </form>
       <section className="search-results">
