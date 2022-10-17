@@ -41,7 +41,7 @@ const SinglePageApp = () => {
   }, []);
   console.log(readList);
 
-  const [userMessage, setUserMessage] = useState({});
+  const [userMessage, setUserMessage] = useState(null);
   console.log(userMessage);
   const handleUserMessage = (userMessage) => {
     setUserMessage(userMessage);
@@ -135,15 +135,17 @@ const SinglePageApp = () => {
 
   return (
     <main>
-      <BookSearch
-        addToBucketList={addToBucketList}
-        handleSearchResults={handleSearchResults}
-        searchResults={searchResults}
-        handleBookClick={handleBookClick}
-        handleModalClose={handleModalClose}
-        openModalOnEnter={openModalOnEnter}
-        handleUserMessage={handleUserMessage}
-      />
+      <section className="search-section">
+        <BookSearch
+          addToBucketList={addToBucketList}
+          handleSearchResults={handleSearchResults}
+          searchResults={searchResults}
+          handleBookClick={handleBookClick}
+          handleModalClose={handleModalClose}
+          openModalOnEnter={openModalOnEnter}
+          handleUserMessage={handleUserMessage}
+        />
+      </section>
       <BucketList
         bucketListBooks={bucketListBooks}
         handleBookClick={handleBookClick}
@@ -154,7 +156,10 @@ const SinglePageApp = () => {
         handleUserMessage={handleUserMessage}
       />
       <ReadList readList={readList} />
-      <RandomBook bucketListBooks={bucketListBooks} />
+      <RandomBook
+        bucketListBooks={bucketListBooks}
+        handleUserMessage={handleUserMessage}
+      />
       {userMessage && (
         <UserMessage
           message={userMessage.message}

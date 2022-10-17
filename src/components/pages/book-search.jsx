@@ -84,7 +84,7 @@ const BookSearch = ({
   return (
     <>
       <form>
-        <TextInput ref={searchRef} isValid={true} />
+        <TextInput ref={searchRef} isValid={true} focusOnLoad={true} />
         <button onClick={findBooks}>{/* <MdSearch /> */} Search</button>
       </form>
       <section className="search-results">
@@ -107,7 +107,7 @@ const BookSearch = ({
                     : "#"
                 }
               />
-              <button onClick={() =>     addToBucketList(index)}>Add</button>
+              <button onClick={() => addToBucketList(index)}>Add</button>
             </div>
           ))}
       </section>

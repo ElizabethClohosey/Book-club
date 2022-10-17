@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BookCard from "./common/book-card";
 
-const ReadList = ({ bucketListBooks }) => {
+const ReadList = ({ bucketListBooks, handleUserMessage }) => {
   console.log(bucketListBooks);
   const [randomBook, setRandomBook] = useState({});
   console.log(randomBook);
@@ -15,8 +15,14 @@ const ReadList = ({ bucketListBooks }) => {
       //   bucketListBooks[Math.floor(Math.random() * bucketListBooks.length)];
 
       // setUserMessage(null);
+      handleUserMessage(null);
     } else {
       console.log("No random book for you");
+      handleUserMessage({
+        type: "",
+        message: "No random book for you!",
+        isErr: true,
+      });
       // setIsMessageErr(true);
       // setUserMessage({
       //   type: "RANDOM_BOOK_MESSAGE",
@@ -30,7 +36,7 @@ const ReadList = ({ bucketListBooks }) => {
   };
 
   return (
-    <section>
+    <section className="random-book-section">
       <h2>Get Random Book</h2>
       <div>
         <p>

@@ -27,8 +27,9 @@
 
 
 .user-message-wrapper {
-  position: absolute;
+  position: fixed;
   top: 35px;
+  left: 0;
   z-index: 99;
   width: 100%;
   text-align: center;

@@ -34,7 +34,14 @@ const ReadList = ({ readList }) => {
               </div>
             ))
           ) : (
-            <p>Testing Read List</p>
+            <>
+              <p>
+                This list is empty <br />
+                Get started on your bucklist!
+              </p>
+
+              <p></p>
+            </>
           )}
         </section>
       )}

@@ -1,4 +1,9 @@
 
+
+/* .App {
+  overflow-y: hidden;
+} */
+
 /* Layout  */
 header {
   background: green;
@@ -16,7 +21,7 @@ h1 {
 
 
 footer {
-  background: green;
+  background: white;
   /* position: absolute;
   bottom: 0;
   width: 100%; */
@@ -28,26 +33,34 @@ footer p {
 }
 
 main {
-  padding-top: 60px;
+  padding-top: 100px;
   padding-bottom: 60px;
   /* viewport height minus padding and footer height */
   /* min-height: calc(100vh - 120px);  */
   max-width: 768px;
   height: 100vh;
   margin: auto;
-  background: pink;
+  background: rgb(220, 234, 248);
   overflow: scroll;
 }
 
 .list-wrapper {
   border: 1px solid black;
   background: white;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .list-wrapper button:first-of-type {
   width: 100%;
   padding: .5rem 0;
+  text-decoration: underline;
+}
+
+.search-section,
+.random-book-section {
+  background: white; 
+  padding: .5rem;
+  margin-bottom: 2rem;
 }
 
 .search-results,

@@ -76,7 +76,11 @@ const BucketList = ({
               </div>
             ))
           ) : (
-            <p>Testing Bucket List</p>
+            <p>
+              This list is empty
+              <br />
+              Use the search bar to add books to your list
+            </p>
           )}
         </section>
       )}
