@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import axios from "axios";
 // import { MdSearch } from "react-icons/md";
 import TextInput from "../form/text-input";
 import BookCard from "../common/book-card";
-import Modal from "../common/modal";
+// import Modal from "../common/modal";
 
 const BookSearch = ({
   handleSearchResults,
