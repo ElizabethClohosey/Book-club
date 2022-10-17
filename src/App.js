@@ -5,7 +5,7 @@ import Header from "./components/layout/header";
 import SinglePageApp from "./components/single-page-app";
 // import Home from "./components/pages/home"
 // import BookSearch from "./components/pages/book-search";
-import Footer from "./components/layout/footer";
+// import Footer from "./components/layout/footer";
 
 
 import "./App.css"
