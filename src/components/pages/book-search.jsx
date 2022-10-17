@@ -80,7 +80,9 @@ const BookSearch = ({
           isValid={true}
           focusOnLoad={true}
         />
-        <button onClick={findBooks}>{/* <MdSearch /> */} Search</button>
+        <button className="btn responsive" onClick={findBooks}>
+          {/* <MdSearch /> */} Search
+        </button>
       </form>
       <hr className="dark" />
       <section className="search-results">
@@ -103,11 +105,16 @@ const BookSearch = ({
                     : "#"
                 }
               />
+              {/* <hr className="dark"/> */}
               <button onClick={() => addToBucketList(index)}>Add</button>
             </div>
           ))
         ) : (
-          <p>Please use the search input to find some books.  Your search results will show here.</p>
+          <p>
+            Your search results will show here.
+            <br />
+            Use the search input above to search for books to add to your lists.
+          </p>
         )}
         {/* {Object.keys(searchResults).length > 0 &&
           searchResults.map((volume, index) => (

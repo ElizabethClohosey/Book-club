@@ -49,7 +49,7 @@ const ReadList = ({ bucketListBooks, handleUserMessage }) => {
           </>
         )}
 
-        <button className="btn" onClick={getRandomBook}>
+        <button className="btn responsive" onClick={getRandomBook}>
           Find Next Book
         </button>
       </div>
