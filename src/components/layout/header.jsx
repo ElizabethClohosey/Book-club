@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../../assets/images/logo-sm.png";
 
 const Header = () => {
   return (
@@ -9,15 +10,15 @@ const Header = () => {
           alignItems: "center",
           justifyContent: "space-between",
           height: "100%",
+          padding: '0 .5rem'
         }}
       >
-        <p>Logo</p>
-        <p>Menu</p>
-        {/* <img
-          style={{ height: "55px" }}
+        <img
+          style={{ height: "35px" }}
           src={Logo}
           alt="book club bitches text above books"
-        /> */}
+        />
+        <p>Menu</p>
       </div>
     </header>
   );
