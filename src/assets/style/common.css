@@ -42,16 +42,10 @@
 }
 
 .user-message {
-  /* position: absolute;
-  top: 35px;
-  z-index: 99; */
   padding: .15rem;
-
+  font-weight: 700;
 }
 
-.user-message p {
-  margin: 0;
-}
 
 .user-message.error {
   background: var(--err-backgroud);
