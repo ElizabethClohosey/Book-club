@@ -8,7 +8,6 @@ const ReadList = ({ bucketListBooks, handleUserMessage }) => {
       setRandomBook(
         bucketListBooks[Math.floor(Math.random() * bucketListBooks.length)]
       );
-      handleUserMessage(null);
     } else {
       console.log("No random book for you");
       handleUserMessage({

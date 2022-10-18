@@ -11,21 +11,22 @@ const BucketList = ({
   handleUserMessage,
 }) => {
   const [showList, setShowList] = useState(true);
-  // console.log(bucketListBooks);
 
   const handleRead = (volume, index) => {
     handleUserMessage({
       type: "",
-      message: "[Book name] added to 'Read' list",
+      message: `${volume.volumeInfo.title} added to 'Read' list`,
     });
     addToReadList(volume, index);
   };
 
-  const handleDelete = (index) => {
+  const handleDelete = (volume, index) => {
+    console.log(volume);
     handleUserMessage({
       type: "",
-      message: "[Book name] removed from 'Bucket' list",
+      message: `${volume.volumeInfo.title} removed from 'Bucket' list`,
       isErr: false,
+      hasIcon: true,
     });
     removeFromBucketList(index);
   };
@@ -68,7 +69,7 @@ const BucketList = ({
                       display: "flex",
                       alignItems: "center",
                     }}
-                    onClick={() => handleDelete(index)}
+                    onClick={() => handleDelete(volume, index)}
                   >
                     <MdDelete />
                   </button>

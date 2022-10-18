@@ -1,15 +1,14 @@
 import React, { forwardRef, useEffect, useState } from "react";
+import { FaExclamationCircle } from "react-icons/fa";
 
 const UserMessage = forwardRef(
-  ({ message, isErrMessage, isMessageVisible }, ref) => {
+  ({ message, isErrMessage, isMessageVisible, hasIcon }, ref) => {
     console.log(isMessageVisible);
     console.log(message);
     const [showMessage, setShowMessage] = useState(false);
 
     useEffect(() => {
-      // if (timedMessage) {
       setShowMessage(true);
-      // }
 
       const timeId = setTimeout(() => {
         setShowMessage(!setShowMessage);
@@ -23,12 +22,15 @@ const UserMessage = forwardRef(
       <>
         {showMessage && (
           <div className="user-message-wrapper">
-            <div
-              className={`user-message ${isErrMessage ? "error" : "success"}`}
-              ref={ref}
-            >
-              {message && <p stlye={{ margin: "0" }}>{message}</p>}
-            </div>
+            {message && (
+              <div
+                className={`user-message ${isErrMessage ? "error" : "success"}`}
+                ref={ref}
+              >
+                {hasIcon && <FaExclamationCircle />} <p>{message}</p>
+                {hasIcon && <FaExclamationCircle />}
+              </div>
+            )}
           </div>
         )}
       </>

@@ -8,20 +8,16 @@ import Modal from "./common/modal";
 
 const SinglePageApp = () => {
   const [searchResults, setSearchResults] = useState({});
-  // console.log(searchResults);
 
   const handleSearchResults = (data) => {
     setSearchResults(data);
   };
 
   const [bucketListBooks, dispatchBucketList] = useReducer((state, action) => {
-    // console.log(state, action);
     switch (action.type) {
       case "ADD_TO_BUCKET_LIST":
         return [...state, action.selectedVolume];
       case "DELETE_FROM_BUCKET_LIST":
-        // setUserMessage(null);
-        // setRandomBook([]);
         return state.filter((_, index) => index !== action.index);
       default:
         return state;
@@ -32,33 +28,28 @@ const SinglePageApp = () => {
     console.log(state, action);
     switch (action.type) {
       case "ADD_TO_READ_LIST":
-        // console.log("will this work?");
-        // return state.filter((_, index) => index === action.index);
         return [...state, action.selectedVolume];
       default:
         return state;
     }
   }, []);
-  console.log(readList);
 
   const [userMessage, setUserMessage] = useState(null);
   const [isMessageVisible, setIsMessageVisible] = useState(false);
-  console.log(isMessageVisible);
-  console.log(userMessage);
   const handleUserMessage = (userMessage) => {
     setUserMessage(userMessage);
     setIsMessageVisible(!isMessageVisible);
   };
-  // const [readList, setReadList] = useState([]);
+
+
+
   const addToReadList = (volume, index) => {
     let selectedVolume = bucketListBooks[index];
-    console.log(selectedVolume);
-    // console.log("Volume: ", volume, "Index: ", index);
     dispatchBucketList({ type: "DELETE_FROM_BUCKET_LIST", index });
     dispatchReadList({ type: "ADD_TO_READ_LIST", selectedVolume });
   };
 
-  const addToBucketList = (index) => {
+  const addToBucketList = (volume, index) => {
     let selectedVolume = searchResults[index];
     let volumeInfo = selectedVolume.volumeInfo;
 
@@ -73,12 +64,6 @@ const SinglePageApp = () => {
     );
 
     if (duplicateId || (duplicateTitle && duplicateAuthor)) {
-      console.log("Duplicate Book");
-      // setUserMessage({
-      //   type: "TBR_FORM_MESSAGE",
-      //   message: "Unable to add duplicate book to list",
-      // });
-      // setIsMessageErr(true);
       handleUserMessage({
         // type: "TESTING",
         message: "Unable to add duplicate book",
@@ -86,15 +71,9 @@ const SinglePageApp = () => {
       });
     } else {
       dispatchBucketList({ type: "ADD_TO_BUCKET_LIST", selectedVolume });
-      // setUserMessage({
-      //   type: "TBR_FORM_MESSAGE",
-      //   message: `${volumeInfo.title} added to "To Be Read" List`,
-      // });
-      // setIsMessageErr(false);
-      // setIsInputValid(true);
       handleUserMessage({
         // type: "TESTING",
-        message: "[Book Name] added tp 'Book Bucket List'",
+        message: `${volume.volumeInfo.title} added to 'Book Bucket List'`,
         isErr: false,
       });
     }
@@ -120,8 +99,6 @@ const SinglePageApp = () => {
   };
 
   const removeFromBucketList = (index) => {
-    // let selectedVolume = searchResults[index];
-    // console.log("Deleting book at index", index);
     dispatchBucketList({ type: "DELETE_FROM_BUCKET_LIST", index });
   };
 
@@ -179,6 +156,7 @@ const SinglePageApp = () => {
           message={userMessage.message}
           isErrMessage={userMessage.isErr}
           isMessageVisible={isMessageVisible}
+          hasIcon={userMessage.hasIcon}
         />
       )}
       {showModal && (

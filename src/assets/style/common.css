@@ -44,6 +44,14 @@
 .user-message {
   padding: .15rem;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-message svg {
+  color: var(--err-text);
+  padding: .25rem;
 }
 
 
