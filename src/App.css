@@ -94,6 +94,13 @@ main {
   background: var(--light);
 } */
 
+.random-book-section .section-content div:nth-of-type(1) p {
+  background: var(--white);
+  padding: .25rem;
+  margin-bottom: 1rem;
+  border-radius: .25rem;
+}
+
 
 
 

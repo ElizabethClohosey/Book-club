@@ -24,7 +24,7 @@ const ReadList = ({ bucketListBooks, handleUserMessage }) => {
       <div>
         <p>
           Trouble choosing a book? Click the button below to get a random book
-          from your "To Be Read" list.
+          from your "Read" list.
         </p>
         {Object.keys(randomBook).length > 0 && (
           <>

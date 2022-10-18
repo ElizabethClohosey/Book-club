@@ -34,7 +34,7 @@ const ReadList = ({ readList }) => {
             <>
               <p>
                 This list is empty <br />
-                Get started on your bucklist!
+                Get started on your Book Bucket List!
               </p>
 
               <p></p>

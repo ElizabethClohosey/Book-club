@@ -1,6 +1,6 @@
 
 input[type="text"] {
-  height: 1.5rem;
+  height: 1.75rem;
   border-radius: .25rem;
   padding-left: .25rem;
     /* Dark mode color  */
@@ -64,7 +64,7 @@ form {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
 }
 
 .form-group label {
