@@ -42,9 +42,12 @@ const SinglePageApp = () => {
   console.log(readList);
 
   const [userMessage, setUserMessage] = useState(null);
+  const [isMessageVisible, setIsMessageVisible] = useState(false);
+  console.log(isMessageVisible);
   console.log(userMessage);
   const handleUserMessage = (userMessage) => {
     setUserMessage(userMessage);
+    setIsMessageVisible(!isMessageVisible);
   };
   // const [readList, setReadList] = useState([]);
   const addToReadList = (volume, index) => {
@@ -175,6 +178,7 @@ const SinglePageApp = () => {
         <UserMessage
           message={userMessage.message}
           isErrMessage={userMessage.isErr}
+          isMessageVisible={isMessageVisible}
         />
       )}
       {showModal && (
