@@ -12,7 +12,6 @@ const BookSearch = ({
   handleUserMessage,
 }) => {
   const searchRef = useRef(null);
-  console.log(searchResults);
 
   const findBooks = async (e) => {
     e.preventDefault();
@@ -23,7 +22,6 @@ const BookSearch = ({
       );
 
       if (!result.data.items) {
-        console.log("Argh");
         handleUserMessage({
           message:
             "Unable to locate book.  Update your search criteria and try again.",
@@ -33,8 +31,8 @@ const BookSearch = ({
         handleSearchResults(result.data.items);
       }
     } catch (err) {
-      console.log("Request Error", err);
-      console.log(err.response.data.error.message);
+      // console.log("Request Error", err);
+      // console.log(err.response.data.error.message);
       handleUserMessage({
         message: err.response.data.error.message,
         isErr: true,

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import BookCard from "./common/book-card";
 
 const ReadList = ({ readList }) => {
-  console.log(readList);
   const [showList, setShowList] = useState(true);
   return (
     <section className="section-content">
