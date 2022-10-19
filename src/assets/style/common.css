@@ -33,20 +33,29 @@
 /* User Messages  
 /* ============ */
 .user-message-wrapper {
-  position: fixed;
-  top: 35px;
-  left: 0;
+
   z-index: 99;
   width: 100%;
   text-align: center;
-}
-
-.user-message {
-  padding: .15rem;
-  font-weight: 700;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  /* width: 90%;
+  margin: auto; */
+  /* background: rgba(0, 0, 0, .5); */
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.user-message {
+  padding: .25rem;
+  font-weight: 700;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  width: 100%;
 }
 
 .user-message svg {

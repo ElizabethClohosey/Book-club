@@ -12,22 +12,57 @@ const BookSearch = ({
   handleUserMessage,
 }) => {
   const searchRef = useRef(null);
+  console.log(searchResults);
 
   const findBooks = async (e) => {
     e.preventDefault();
-    if (searchRef.current.value) {
+
+    try {
       const result = await axios(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchRef.current.value}&printType=books&startIndex=0&maxResults=10`
+        `https://www.googleapis.com/books/v1/volumes?q=${searchRef.current.value}&printType=books&startIndex=0&maxResults=40`
       );
-      handleSearchResults(result.data.items);
-      searchRef.current.value = "";
-    } else {
+
+      if (!result.data.items) {
+        console.log("Argh");
+        handleUserMessage({
+          message:
+            "Unable to locate book.  Update your search criteria and try again.",
+          isErr: true,
+        });
+      } else {
+        handleSearchResults(result.data.items);
+      }
+    } catch (err) {
+      console.log("Request Error", err);
+      console.log(err.response.data.error.message);
       handleUserMessage({
-        type: "TESTING",
-        message: "Add some search criteria",
+        message: err.response.data.error.message,
         isErr: true,
       });
     }
+
+    // if (result) {
+    //   handleSearchResults(result.data.items);
+    //   searchRef.current.value = "";
+    // } else if (!searchRef.current.value && !result) {
+    //   handleUserMessage({ message: "Please add search criteria", isErr: true });
+    // } else {
+    //   handleSearchResults([]);
+    //   handleUserMessage({ message: "Unable to locate book", isErr: true });
+    // }
+    // if (searchRef.current.value) {
+    //   const result = await axios(
+    //     `https://www.googleapis.com/books/v1/volumes?q=${searchRef.current.value}&printType=books&startIndex=0&maxResults=10`
+    //   );
+    //   handleSearchResults(result.data.items);
+    //   searchRef.current.value = "";
+    // } else {
+    //   handleUserMessage({
+    //     type: "TESTING",
+    //     message: "Add some search criteria",
+    //     isErr: true,
+    //   });
+    // }
   };
 
   return (
@@ -45,13 +80,15 @@ const BookSearch = ({
       </form>
       <hr className="dark" />
       <section className="search-results">
-        {Object.keys(searchResults).length > 0 ? (
+        {searchResults && Object.keys(searchResults).length > 0 ? (
           searchResults.map((volume, index) => (
             <div key={volume.id} className="book-card-wrapper">
               <BookCard
                 handleClick={() => handleBookClick(volume)}
                 handleKeyDown={(e) => openModalOnEnter(volume, e)}
-                title={volume.volumeInfo.title}
+                title={
+                  volume.volumeInfo.title ? volume.volumeInfo.title : "N/A"
+                }
                 author={
                   volume.volumeInfo.authors
                     ? volume.volumeInfo.authors[0]
@@ -64,7 +101,9 @@ const BookSearch = ({
                     : "#"
                 }
               />
-              <button onClick={() => addToBucketList(volume, index)}>Add</button>
+              <button onClick={() => addToBucketList(volume, index)}>
+                Add
+              </button>
             </div>
           ))
         ) : (
