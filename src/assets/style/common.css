@@ -192,9 +192,15 @@ button {
   background: var(--light);
   padding: 0.5rem;
   box-shadow: 1px 1px 5px var(--black);
-  font-weight: 600;
+  font-weight: 800;
   border-radius: 0.25rem;
   color: black;
+}
+
+.app-dark .btn {
+  background: var(--blue-gray);
+  /* color: white; */
+  /* text-shadow: 0px 0px 5px var(--black); */
 }
 
 .btn.responsive {
