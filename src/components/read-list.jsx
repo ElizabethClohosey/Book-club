@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BookCard from "./common/book-card";
 
-const ReadList = ({ readList }) => {
+const ReadList = ({ readList, openModalOnEnter, handleBookClick }) => {
   const [showList, setShowList] = useState(true);
   return (
     <section className="section-content">
@@ -23,6 +23,8 @@ const ReadList = ({ readList }) => {
                   {readList.map((volume) => (
                     <div key={volume.id} className="book-card-wrapper">
                       <BookCard
+                        handleClick={() => handleBookClick(volume)}
+                        handleKeyDown={(e) => openModalOnEnter(volume, e)}
                         title={volume.volumeInfo.title}
                         author={
                           volume.volumeInfo.authors

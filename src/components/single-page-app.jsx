@@ -41,8 +41,6 @@ const SinglePageApp = () => {
     setIsMessageVisible(!isMessageVisible);
   };
 
-
-
   const addToReadList = (volume, index) => {
     let selectedVolume = bucketListBooks[index];
     dispatchBucketList({ type: "DELETE_FROM_BUCKET_LIST", index });
@@ -122,7 +120,7 @@ const SinglePageApp = () => {
           handleSearchResults={handleSearchResults}
           searchResults={searchResults}
           handleBookClick={handleBookClick}
-          handleModalClose={handleModalClose}
+          // handleModalClose={handleModalClose}
           openModalOnEnter={openModalOnEnter}
           handleUserMessage={handleUserMessage}
         />
@@ -133,14 +131,19 @@ const SinglePageApp = () => {
         <BucketList
           bucketListBooks={bucketListBooks}
           handleBookClick={handleBookClick}
-          handleModalClose={handleModalClose}
+          // handleModalClose={handleModalClose}
           openModalOnEnter={openModalOnEnter}
           removeFromBucketList={removeFromBucketList}
           addToReadList={addToReadList}
           handleUserMessage={handleUserMessage}
         />
 
-        <ReadList readList={readList} />
+        <ReadList
+          readList={readList}
+          // handleModalClose={handleModalClose}
+          openModalOnEnter={openModalOnEnter}
+          handleBookClick={handleBookClick}
+        />
       </section>
 
       <section className="random-book-section">
@@ -148,6 +151,9 @@ const SinglePageApp = () => {
         <RandomBook
           bucketListBooks={bucketListBooks}
           handleUserMessage={handleUserMessage}
+          // handleModalClose={handleModalClose}
+          openModalOnEnter={openModalOnEnter}
+          handleBookClick={handleBookClick}
         />
       </section>
 

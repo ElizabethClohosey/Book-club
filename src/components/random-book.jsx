@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import BookCard from "./common/book-card";
 
-const ReadList = ({ bucketListBooks, handleUserMessage }) => {
+const ReadList = ({
+  bucketListBooks,
+  handleUserMessage,
+  handleBookClick,
+  openModalOnEnter,
+}) => {
   const [randomBook, setRandomBook] = useState({});
   const getRandomBook = () => {
     if (bucketListBooks && bucketListBooks.length > 1) {
@@ -29,9 +34,7 @@ const ReadList = ({ bucketListBooks, handleUserMessage }) => {
           borderRadius: ".25rem",
         }}
       >
-        <p>
-          Trouble choosing a book? Let us choose for you!
-        </p>
+        <p>Trouble choosing a book? Let us choose for you!</p>
         <p>Book will be chosen from "Book Bucket List"</p>
         {/* <form style={{ display: "flex", flexDirection: "column" }}>
           <label>
@@ -45,8 +48,8 @@ const ReadList = ({ bucketListBooks, handleUserMessage }) => {
           <>
             <div className="book-card-wrapper">
               <BookCard
-                // handleClick={() => handleBookClick(volume)}
-                // handleKeyDown={(e) => openModalOnEnter(volume, e)}
+                handleClick={() => handleBookClick(randomBook)}
+                handleKeyDown={(e) => openModalOnEnter(randomBook, e)}
                 title={randomBook.volumeInfo.title}
                 author={
                   randomBook.volumeInfo.authors
