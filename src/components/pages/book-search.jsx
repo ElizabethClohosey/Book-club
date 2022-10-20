@@ -18,7 +18,7 @@ const BookSearch = ({
 
     try {
       const result = await axios(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchRef.current.value}&printType=books&startIndex=0&maxResults=40`
+        `https://www.googleapis.com/books/v1/volumes?q=${searchRef.current.value}&printType=books&startIndex=0&maxResults=20`
       );
 
       if (!result.data.items) {
@@ -77,33 +77,43 @@ const BookSearch = ({
         </button>
       </form>
       <hr className="dark" />
-      <section className="search-results">
+
+      <div className="search-results-wrapper">
         {searchResults && Object.keys(searchResults).length > 0 ? (
-          searchResults.map((volume, index) => (
-            <div key={volume.id} className="book-card-wrapper">
-              <BookCard
-                handleClick={() => handleBookClick(volume)}
-                handleKeyDown={(e) => openModalOnEnter(volume, e)}
-                title={
-                  volume.volumeInfo.title ? volume.volumeInfo.title : "N/A"
-                }
-                author={
-                  volume.volumeInfo.authors
-                    ? volume.volumeInfo.authors[0]
-                    : "N/A"
-                }
-                imgSrc={
-                  volume.volumeInfo.imageLinks &&
-                  volume.volumeInfo.imageLinks.thumbnail
-                    ? volume.volumeInfo.imageLinks.thumbnail
-                    : "#"
-                }
-              />
-              <button onClick={() => addToBucketList(volume, index)}>
-                Add
-              </button>
+          <section>
+            <div className="list-instructions">
+              <h3>Search Results</h3>
+              <p>Page instructions will live here</p>
+              <hr className="dark" />
             </div>
-          ))
+            <section className="search-results">
+              {searchResults.map((volume, index) => (
+                <div key={volume.id} className="book-card-wrapper">
+                  <BookCard
+                    handleClick={() => handleBookClick(volume)}
+                    handleKeyDown={(e) => openModalOnEnter(volume, e)}
+                    title={
+                      volume.volumeInfo.title ? volume.volumeInfo.title : "N/A"
+                    }
+                    author={
+                      volume.volumeInfo.authors
+                        ? volume.volumeInfo.authors[0]
+                        : "N/A"
+                    }
+                    imgSrc={
+                      volume.volumeInfo.imageLinks &&
+                      volume.volumeInfo.imageLinks.thumbnail
+                        ? volume.volumeInfo.imageLinks.thumbnail
+                        : "#"
+                    }
+                  />
+                  <button onClick={() => addToBucketList(volume, index)}>
+                    Add
+                  </button>
+                </div>
+              ))}
+            </section>
+          </section>
         ) : (
           <p>
             Your search results will show here.
@@ -111,7 +121,7 @@ const BookSearch = ({
             Use the search input above to search for books to add to your lists.
           </p>
         )}
-      </section>
+      </div>
     </section>
   );
 };
