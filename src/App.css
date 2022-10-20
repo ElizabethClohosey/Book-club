@@ -70,8 +70,9 @@ footer {
   margin-top: 1rem;
 }
 
-.search-results-wrapper {
+.list-wrapper {
   background: white;
+  background: pink;
   padding: 1rem;
 }
 

@@ -78,9 +78,9 @@ const BookSearch = ({
       </form>
       <hr className="dark" />
 
-      <div className="search-results-wrapper">
+      <div className="list-wrapper">
         {searchResults && Object.keys(searchResults).length > 0 ? (
-          <section>
+          <section className="search-results-section">
             <div className="list-instructions">
               <h3>Search Results</h3>
               <p>Page instructions will live here</p>
@@ -116,9 +116,10 @@ const BookSearch = ({
           </section>
         ) : (
           <p>
-            Your search results will show here.
-            <br />
             Use the search input above to search for books to add to your lists.
+            <br />
+            <br />
+            Your search results will show here.
           </p>
         )}
       </div>
