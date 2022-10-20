@@ -1,3 +1,7 @@
+.App {
+  position: relative;
+}
+
 /* Layout  */
 header {
   background: var(--bright);
@@ -50,4 +54,8 @@ footer {
   margin-top: 1rem;
 }
 
-
+.version {
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+}

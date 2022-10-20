@@ -2,8 +2,10 @@ import React from "react";
 
 const Version = () => {
   return (
-    // <p>v0.0.3</p>
-    <p>Prod: v0.0.4</p>
+    <div className="version">
+      <p>v0.0.4</p>
+    </div>
+    // <p>ProdTEST: v0.0.5</p>
   );
 };
 
