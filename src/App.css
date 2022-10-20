@@ -13,6 +13,15 @@ header {
   box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
 }
 
+.app-dark header {
+  background: var(--darkMode-bg);
+  color: var(--bright);
+}
+
+.app-dark .theme button {
+  color: var(--bright);
+}
+
 main {
   max-width: 1140px;
   margin: auto;
@@ -24,6 +33,15 @@ main {
     circle,
     rgba(255, 255, 255, 1) 50%,
     rgba(182, 213, 225, 1) 80%
+  );
+}
+
+.app-dark main {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(101, 121, 155) 50%,
+    rgba(85, 82, 115, 1) 80%
   );
 }
 
@@ -49,13 +67,38 @@ footer {
   padding-bottom: 1rem;
 }
 
+.app-dark .search-section,
+.app-dark .book-lists-section,
+.app-dark .random-book-section {
+  background: var(--black);
+  color: var(--bright);
+  box-shadow: 0 0 5px var(--black);
+}
+
+/* .app-dark */
+
 .section-content {
   padding: 0 0.5rem;
   margin-top: 1rem;
+}
+
+.random-book {
+  background: whitesmoke;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.app-dark .random-book {
+  background: var(--darkMode-bg);
 }
 
 .version {
   position: absolute;
   bottom: 0px;
   right: 5px;
+}
+
+.app-dark .version {
+  color: var(--light);
 }

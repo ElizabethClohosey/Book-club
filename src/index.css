@@ -10,8 +10,8 @@
   /* Theme */
   --light: rgb(226, 239, 241);
   --bright: rgb(182, 213, 225);
-  --blue-gray: #65799b;
-  --purblue: #555273;
+  --blue-gray: rgb(101, 121, 155);
+  --purblue: rgb(85, 82, 115);
   --darkMode-bg: #2a2a2a;
 
   /* User Messages  */

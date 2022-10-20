@@ -25,15 +25,7 @@ const ReadList = ({
 
   return (
     <section className="section-content">
-      <div
-        className="random-book"
-        style={{
-          background: "white",
-          marginBottom: "1rem",
-          padding: "1rem",
-          borderRadius: ".25rem",
-        }}
-      >
+      <div className="random-book">
         <p>Trouble choosing a book? Let us choose for you!</p>
         <p>Book will be chosen from "Book Bucket List"</p>
         {/* <form style={{ display: "flex", flexDirection: "column" }}>

@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../../assets/images/logo-sm.png";
 
-const Header = () => {
+const Header = ({ toggleDarkMode }) => {
   return (
     <header>
       <div
@@ -10,7 +10,7 @@ const Header = () => {
           alignItems: "center",
           justifyContent: "space-between",
           height: "100%",
-          padding: '0 .5rem'
+          padding: "0 .5rem",
         }}
       >
         <img
@@ -18,6 +18,10 @@ const Header = () => {
           src={Logo}
           alt="book club bitches text above books"
         />
+        <div className="theme" onClick={toggleDarkMode}>
+          <button>Dark</button>
+          <button>Light</button>
+        </div>
         <p>Menu</p>
       </div>
     </header>

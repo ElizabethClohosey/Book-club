@@ -8,6 +8,10 @@
   width: 80%; */
 }
 
+.app-dark .list-wrapper {
+  background: var(--darkMode-bg);
+}
+
 .list-instructions svg {
   margin-right: 5px;
   color: var(--purblue);

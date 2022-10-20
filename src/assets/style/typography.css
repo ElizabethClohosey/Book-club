@@ -10,7 +10,7 @@ p {
 
 p {
   margin: 0;
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 h2 {
@@ -25,14 +25,17 @@ h2 {
   border-bottom: 1px solid var(--purblue);
 }
 
+.app-dark h2 {
+  background: var(--purblue);
+  color: var(--light);
+}
+
 h3 {
   margin-bottom: 1rem;
   text-decoration: underline;
   font-size: 1rem;
 }
 
-
-  
 @media screen and (min-width: 540px) {
   p {
     font-size: 1rem;

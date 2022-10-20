@@ -1,5 +1,5 @@
 
-import { React, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 
 import Header from "./components/layout/header";
 import SinglePageApp from "./components/single-page-app";
@@ -11,6 +11,12 @@ import Version from "./components/common/version";
 
 import "./App.css"
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  console.log(darkMode);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
 
   useEffect(() => {
 
@@ -18,8 +24,8 @@ function App() {
 
   return (
     // <div className={`App ${darkMode ? "app-dark" : undefined}`}>
-    <div className="App">
-      <Header />
+    <div className={`App ${darkMode ? "app-dark" : ""}`}>
+      <Header toggleDarkMode={toggleDarkMode} />
       <SinglePageApp />
       <Version />
       {/* <Home /> */}
