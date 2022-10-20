@@ -3,6 +3,7 @@ import { React, useEffect } from "react";
 
 import Header from "./components/layout/header";
 import SinglePageApp from "./components/single-page-app";
+import Version from "./components/common/version";
 // import Home from "./components/pages/home"
 // import BookSearch from "./components/pages/book-search";
 // import Footer from "./components/layout/footer";
@@ -20,6 +21,7 @@ function App() {
     <div className="App">
       <Header />
       <SinglePageApp />
+      <Version />
       {/* <Home /> */}
       {/* <BookSearch /> */}
       {/* <Footer /> */}

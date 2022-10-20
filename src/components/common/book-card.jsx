@@ -15,7 +15,9 @@ const BookCard = ({
       onClick={handleClick}
       onKeyDown={handleKeyDown}
     >
-      <img src={imgSrc ? imgSrc : ""} alt="book cover" />
+      <div className="book-card-header">
+        <img src={imgSrc ? imgSrc : ""} alt="book cover" />
+      </div>
       <div className="book-card-content">
         <p>
           <strong>
