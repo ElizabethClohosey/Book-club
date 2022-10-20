@@ -3,8 +3,8 @@ import { FaExclamationCircle } from "react-icons/fa";
 
 const UserMessage = forwardRef(
   ({ message, isErrMessage, isMessageVisible, hasIcon }, ref) => {
-    console.log(isMessageVisible);
-    console.log(message);
+    // console.log(isMessageVisible);
+    // console.log(message);
     const [showMessage, setShowMessage] = useState(false);
 
     useEffect(() => {

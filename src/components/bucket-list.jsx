@@ -24,7 +24,7 @@ const BucketList = ({
   };
 
   const handleDelete = (volume, index) => {
-    console.log(volume);
+    // console.log(volume);
     handleUserMessage({
       type: "",
       message: `${volume.volumeInfo.title} removed from 'Bucket' list`,
