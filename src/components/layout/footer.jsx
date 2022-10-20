@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Version from "../common/version";
+// import Version from "../common/version";
 
 const Footer = () => {
   const [showComingSoon, setShowComingSoon] = useState(false);
@@ -25,7 +25,7 @@ const Footer = () => {
       {/* <a onClick={(e) => handleComingSoon(e)} href="#">
         Developer Information
       </a> */}
-      <Version />
+
     </footer>
   );
 };
