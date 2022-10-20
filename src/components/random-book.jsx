@@ -30,8 +30,7 @@ const ReadList = ({ bucketListBooks, handleUserMessage }) => {
         }}
       >
         <p>
-          Trouble choosing a book? Click the button below and we will choose for
-          you!
+          Trouble choosing a book? Let us choose for you!
         </p>
         <p>Book will be chosen from "Book Bucket List"</p>
         {/* <form style={{ display: "flex", flexDirection: "column" }}>
