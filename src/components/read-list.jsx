@@ -13,12 +13,12 @@ const ReadList = ({ readList, openModalOnEnter, handleBookClick }) => {
         <div className="list-wrapper">
           <section className="list-section">
             {Object.keys(readList).length > 0 ? (
-              <section>
-                {/* <h3>Read List</h3> */}
-                <div className="list-instructions">
-                  <p>Page instructions will live here</p>
-                </div>
-                <hr className="dark" />
+              // <section>
+                // <h3>Read List</h3>
+                // <div className="list-instructions">
+                //   <p>Page instructions will live here</p>
+                // </div>
+                // <hr className="dark" />
                 <section className="read-list">
                   {readList.map((volume) => (
                     <div key={volume.id} className="book-card-wrapper">
@@ -41,7 +41,7 @@ const ReadList = ({ readList, openModalOnEnter, handleBookClick }) => {
                     </div>
                   ))}
                 </section>
-              </section>
+              // </section>
             ) : (
               <>
                 <p>

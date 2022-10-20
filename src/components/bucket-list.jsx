@@ -43,66 +43,66 @@ const BucketList = ({
         <div className="list-wrapper">
           <section className="list-section">
             {Object.keys(bucketListBooks).length > 0 ? (
-              <section>
-                {/* <h3>Book Bucket List</h3> */}
-                <div className="list-instructions">
-                  <p>Page instructions will live here</p>
-                </div>
-                <hr className="dark" />
-                <section className="bucket-list">
-                  {bucketListBooks.map((volume, index) => (
-                    <div key={volume.id} className="book-card-wrapper">
-                      <BookCard
-                        handleClick={() => handleBookClick(volume)}
-                        handleKeyDown={(e) => openModalOnEnter(volume, e)}
-                        // key={volume.id}
-                        title={volume.volumeInfo.title}
-                        author={
-                          volume.volumeInfo.authors
-                            ? volume.volumeInfo.authors[0]
-                            : "N/A"
-                        }
-                        imgSrc={
-                          volume.volumeInfo.imageLinks &&
-                          volume.volumeInfo.imageLinks.thumbnail
-                            ? volume.volumeInfo.imageLinks.thumbnail
-                            : "#"
-                        }
-                      />
-                      <div className="btn-bar">
-                        <button onClick={() => handleRead(volume, index)}>
-                          <FaBook
-                            onClick={(e) =>
-                              handleUserMessage({
-                                message: "Functionality coming soon",
-                              })
-                            }
-                          />
-                        </button>
-                        <button>
-                          <GiSpellBook
-                            onClick={(e) =>
-                              handleUserMessage({
-                                message: "Functionality coming soon",
-                              })
-                            }
-                          />
-                        </button>
-                        <button
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                          }}
-                          onClick={() => handleDelete(volume, index)}
-                        >
-                          <BsTrashFill className="delete-book" />
-                        </button>
-                      </div>
+              // <section>
+              // <h3>Book Bucket List</h3>
+              // <div className="list-instructions">
+              //   <p>Page instructions will live here</p>
+              // </div>
+              // <hr className="dark" />
+              <section className="bucket-list">
+                {bucketListBooks.map((volume, index) => (
+                  <div key={volume.id} className="book-card-wrapper">
+                    <BookCard
+                      handleClick={() => handleBookClick(volume)}
+                      handleKeyDown={(e) => openModalOnEnter(volume, e)}
+                      // key={volume.id}
+                      title={volume.volumeInfo.title}
+                      author={
+                        volume.volumeInfo.authors
+                          ? volume.volumeInfo.authors[0]
+                          : "N/A"
+                      }
+                      imgSrc={
+                        volume.volumeInfo.imageLinks &&
+                        volume.volumeInfo.imageLinks.thumbnail
+                          ? volume.volumeInfo.imageLinks.thumbnail
+                          : "#"
+                      }
+                    />
+                    <div className="btn-bar">
+                      <button onClick={() => handleRead(volume, index)}>
+                        <FaBook
+                          onClick={(e) =>
+                            handleUserMessage({
+                              message: "Functionality coming soon",
+                            })
+                          }
+                        />
+                      </button>
+                      <button>
+                        <GiSpellBook
+                          onClick={(e) =>
+                            handleUserMessage({
+                              message: "Functionality coming soon",
+                            })
+                          }
+                        />
+                      </button>
+                      <button
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                        onClick={() => handleDelete(volume, index)}
+                      >
+                        <BsTrashFill className="delete-book" />
+                      </button>
                     </div>
-                  ))}
-                </section>
+                  </div>
+                ))}
               </section>
             ) : (
+              // </section>
               <p>
                 This list is empty
                 <br />
