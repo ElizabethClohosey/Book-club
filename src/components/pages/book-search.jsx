@@ -68,7 +68,7 @@ const BookSearch = ({
       <form>
         <TextInput
           ref={searchRef}
-          label="Search by book Title or Author"
+          label="Search by Title and/or Author"
           isValid={true}
           focusOnLoad={true}
         />
@@ -116,7 +116,7 @@ const BookSearch = ({
           </section>
         ) : (
           <p>
-            Use the search input above to search for books to add to your lists.
+            Use the search input above to get started!
             <br />
             <br />
             Your search results will show here.

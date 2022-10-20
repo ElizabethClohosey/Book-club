@@ -14,7 +14,7 @@ const ReadList = ({ readList }) => {
           <section className="list-section">
             {Object.keys(readList).length > 0 ? (
               <section>
-                <h3>Read List</h3>
+                {/* <h3>Read List</h3> */}
                 <div className="list-instructions">
                   <p>Page instructions will live here</p>
                 </div>

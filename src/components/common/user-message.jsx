@@ -12,7 +12,7 @@ const UserMessage = forwardRef(
 
       const timeId = setTimeout(() => {
         setShowMessage(!setShowMessage);
-      }, 3000);
+      }, 500);
 
       return () => {
         clearTimeout(timeId);

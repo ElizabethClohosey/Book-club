@@ -90,12 +90,19 @@ footer {
   border-bottom-right-radius: 0.25rem; */
 }
 
-.random-book-section .section-content div:nth-of-type(1) p {
+/* .random-book-section .section-content div:nth-of-type(1) p {
   background: var(--white);
   padding: 0.25rem;
   margin-bottom: 1rem;
   border-radius: 0.25rem;
+} */
+.random-book .book-card-wrapper {
+  margin: 1rem auto;
 }
+
+/* .random-book-section .section-content {
+
+} */
 
 @media screen and (min-width: 992px) {
   .search-results,

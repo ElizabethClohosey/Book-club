@@ -1,21 +1,19 @@
-
-
-
 /* ============ 
 /* Book Card  
 /* ============ */
 .book-card-wrapper {
   background: white;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   min-width: 6rem;
   width: 6rem;
   border: 1px solid rgb(210, 210, 210);
   /* margin-bottom: 1rem; */
 }
 
+
 .book-card-content {
   background: white;
-  padding: .25rem;
+  padding: 0.25rem;
   /* border-bottom: 1px solid rgb(210, 210, 210); */
 }
 
@@ -27,14 +25,13 @@
 
 .book-card p {
   margin: 0;
-  font-size: .65rem;
+  font-size: 0.65rem;
 }
 
 /* ============ 
 /* User Messages  
 /* ============ */
 .user-message-wrapper {
-
   z-index: 99;
   width: 100%;
   text-align: center;
@@ -51,7 +48,7 @@
 }
 
 .user-message {
-  padding: .25rem;
+  padding: 0.25rem;
   font-weight: 700;
   /* display: flex;
   align-items: center;
@@ -61,9 +58,8 @@
 
 .user-message svg {
   color: var(--err-text);
-  padding: .25rem;
+  padding: 0.25rem;
 }
-
 
 .user-message.error {
   background: var(--err-backgroud);
@@ -75,7 +71,6 @@
   color: var(--success-text);
 }
 
-
 /* ============ 
 /* Modal 
 /* ============ */
@@ -85,7 +80,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0,0,0, .8);
+  background: rgba(0, 0, 0, 0.8);
   background: white;
   z-index: 98;
   padding-top: 60px;
@@ -109,7 +104,7 @@
 
 .modal .close-btn {
   align-self: flex-end;
-/* position: absolute;
+  /* position: absolute;
 top: 0;
 right: 0; */
 }
@@ -120,9 +115,7 @@ right: 0; */
 
 .modal-content {
   max-width: 75%;
-
 }
-
 
 /* ============ 
 /* Buttons
@@ -135,7 +128,7 @@ button {
 
 .list-btns {
   width: 100%;
-  padding: .5rem .25rem;
+  padding: 0.5rem 0.25rem;
   background: var(--light);
   border: none;
   text-decoration: underline;
@@ -143,15 +136,14 @@ button {
 
 .btn {
   background: var(--light);
-  padding: .5rem;
+  padding: 0.5rem;
   box-shadow: 1px 1px 5px var(--black);
   font-weight: 600;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 .btn.responsive {
   width: 100%;
-
 }
 
 @media screen and (min-width: 768px) {
@@ -159,13 +151,10 @@ button {
     width: initial;
   }
   .btn.btn.responsive:hover {
-   background: var(--blue-gray);
-   color: white;
+    background: var(--blue-gray);
+    color: white;
   }
 }
-
-
-
 
 /* ============ 
 /* Misc
@@ -177,5 +166,10 @@ hr {
 hr.dark {
   border: 0;
   height: 1px;
-  background-image: linear-gradient(to right, rgba(101, 121, 155, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-} 
+  background-image: linear-gradient(
+    to right,
+    rgba(101, 121, 155, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}

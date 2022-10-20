@@ -20,14 +20,31 @@ const ReadList = ({ bucketListBooks, handleUserMessage }) => {
 
   return (
     <section className="section-content">
-      <div>
+      <div
+        className="random-book"
+        style={{
+          background: "white",
+          marginBottom: "1rem",
+          padding: "1rem",
+          borderRadius: ".25rem",
+        }}
+      >
         <p>
-          Trouble choosing a book? Click the button below to get a random book
-          from your "Read" list.
+          Trouble choosing a book? Click the button below and we will choose for
+          you!
         </p>
+        <p>Book will be chosen from "Book Bucket List"</p>
+        {/* <form style={{ display: "flex", flexDirection: "column" }}>
+          <label>
+            <input type="radio" name="random-book"></input>Bucket List Book
+          </label>
+          <label>
+            <input type="radio" name="random-book"></input>Totally Random Book
+          </label>
+        </form> */}
         {Object.keys(randomBook).length > 0 && (
           <>
-            <div className="book-card-wrapper random-book">
+            <div className="book-card-wrapper">
               <BookCard
                 // handleClick={() => handleBookClick(volume)}
                 // handleKeyDown={(e) => openModalOnEnter(volume, e)}
@@ -47,11 +64,10 @@ const ReadList = ({ bucketListBooks, handleUserMessage }) => {
             </div>
           </>
         )}
-
-        <button className="btn responsive" onClick={getRandomBook}>
-          Find Next Book
-        </button>
       </div>
+      <button className="btn responsive" onClick={getRandomBook}>
+        Find Next Book
+      </button>
     </section>
   );
 };

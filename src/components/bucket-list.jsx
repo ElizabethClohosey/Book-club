@@ -41,7 +41,7 @@ const BucketList = ({
           <section className="list-section">
             {Object.keys(bucketListBooks).length > 0 ? (
               <section>
-                <h3>Book Bucket List</h3>
+                {/* <h3>Book Bucket List</h3> */}
                 <div className="list-instructions">
                   <p>Page instructions will live here</p>
                 </div>
