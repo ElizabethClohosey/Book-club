@@ -35,55 +35,70 @@ const BucketList = ({
       <button className="list-btns" onClick={() => setShowList(!showList)}>
         {showList ? "Hide Book Bucket List" : "Show Book Bucket List"}
       </button>
+
       {showList && (
-        <section className="bucket-list">
-          {Object.keys(bucketListBooks).length > 0 ? (
-            bucketListBooks.map((volume, index) => (
-              <div key={volume.id} className="book-card-wrapper">
-                <BookCard
-                  handleClick={() => handleBookClick(volume)}
-                  handleKeyDown={(e) => openModalOnEnter(volume, e)}
-                  key={volume.id}
-                  title={volume.volumeInfo.title}
-                  author={
-                    volume.volumeInfo.authors
-                      ? volume.volumeInfo.authors[0]
-                      : "N/A"
-                  }
-                  imgSrc={
-                    volume.volumeInfo.imageLinks &&
-                    volume.volumeInfo.imageLinks.thumbnail
-                      ? volume.volumeInfo.imageLinks.thumbnail
-                      : "#"
-                  }
-                />
-                <div
-                  className="card-btn-bar"
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <button onClick={() => handleRead(volume, index)}>
-                    Read
-                  </button>
-                  <button
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                    onClick={() => handleDelete(volume, index)}
-                  >
-                    <MdDelete />
-                  </button>
+        <div className="list-wrapper">
+          <section className="list-section">
+            {Object.keys(bucketListBooks).length > 0 ? (
+              <section>
+                <h3>Book Bucket List</h3>
+                <div className="list-instructions">
+                  <p>Page instructions will live here</p>
                 </div>
-              </div>
-            ))
-          ) : (
-            <p>
-              This list is empty
-              <br />
-              Use the search bar to add books to your list
-            </p>
-          )}
-        </section>
+                <hr className="dark" />
+                <section className="bucket-list">
+                  {bucketListBooks.map((volume, index) => (
+                    <div key={volume.id} className="book-card-wrapper">
+                      <BookCard
+                        handleClick={() => handleBookClick(volume)}
+                        handleKeyDown={(e) => openModalOnEnter(volume, e)}
+                        key={volume.id}
+                        title={volume.volumeInfo.title}
+                        author={
+                          volume.volumeInfo.authors
+                            ? volume.volumeInfo.authors[0]
+                            : "N/A"
+                        }
+                        imgSrc={
+                          volume.volumeInfo.imageLinks &&
+                          volume.volumeInfo.imageLinks.thumbnail
+                            ? volume.volumeInfo.imageLinks.thumbnail
+                            : "#"
+                        }
+                      />
+                      <div
+                        className="card-btn-bar"
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <button onClick={() => handleRead(volume, index)}>
+                          Read
+                        </button>
+                        <button
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                          }}
+                          onClick={() => handleDelete(volume, index)}
+                        >
+                          <MdDelete />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </section>
+              </section>
+            ) : (
+              <p>
+                This list is empty
+                <br />
+                Use the search bar to add books to your list
+              </p>
+            )}
+          </section>
+        </div>
       )}
     </section>
   );
