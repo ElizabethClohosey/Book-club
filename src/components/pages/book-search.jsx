@@ -2,6 +2,9 @@ import React, { useRef } from "react";
 import axios from "axios";
 import TextInput from "../form/text-input";
 import BookCard from "../common/book-card";
+import { BsBucketFill } from "react-icons/bs";
+import { FaBook } from "react-icons/fa";
+import { GiSpellBook } from "react-icons/gi";
 
 const BookSearch = ({
   handleSearchResults,
@@ -83,7 +86,28 @@ const BookSearch = ({
           <section className="search-results-section">
             <div className="list-instructions">
               <h3>Search Results</h3>
-              <p>Page instructions will live here</p>
+              <p>
+                Click the bucket icon
+                <span>
+                  <BsBucketFill />
+                </span>
+                to add book to "Book Bucket List"
+              </p>
+              <p>
+                Click the closed book icon
+                <span>
+                  <FaBook />
+                </span>
+                to add book to "Read List"
+              </p>
+              <p>
+                Click the open book icon
+                <span>
+                  <GiSpellBook />
+                </span>
+                to add book to "Current Book"
+              </p>
+              <p>Click on book cover to see more information</p>
               <hr className="dark" />
             </div>
             <section className="search-results">
@@ -107,9 +131,29 @@ const BookSearch = ({
                         : "#"
                     }
                   />
-                  <button onClick={() => addToBucketList(volume, index)}>
-                    Add
-                  </button>
+                  <div className="btn-bar">
+                    <button onClick={() => addToBucketList(volume, index)}>
+                      <BsBucketFill />
+                    </button>
+                    <button>
+                      <GiSpellBook
+                        onClick={(e) =>
+                          handleUserMessage({
+                            message: "Functionality coming soon",
+                          })
+                        }
+                      />
+                    </button>
+                    <button>
+                      <FaBook
+                        onClick={(e) =>
+                          handleUserMessage({
+                            message: "Functionality coming soon",
+                          })
+                        }
+                      />
+                    </button>
+                  </div>
                 </div>
               ))}
             </section>

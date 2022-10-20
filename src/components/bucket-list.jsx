@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import BookCard from "./common/book-card";
-import { MdDelete } from "react-icons/md";
+// import { MdDelete } from "react-icons/md";
+import { FaBook } from "react-icons/fa";
+import { BsTrashFill } from "react-icons/bs";
+import { GiSpellBook } from "react-icons/gi";
 
 const BucketList = ({
   bucketListBooks,
@@ -66,15 +69,24 @@ const BucketList = ({
                             : "#"
                         }
                       />
-                      <div
-                        className="card-btn-bar"
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
+                      <div className="btn-bar">
                         <button onClick={() => handleRead(volume, index)}>
-                          Read
+                          <FaBook
+                            onClick={(e) =>
+                              handleUserMessage({
+                                message: "Functionality coming soon",
+                              })
+                            }
+                          />
+                        </button>
+                        <button>
+                          <GiSpellBook
+                            onClick={(e) =>
+                              handleUserMessage({
+                                message: "Functionality coming soon",
+                              })
+                            }
+                          />
                         </button>
                         <button
                           style={{
@@ -83,7 +95,7 @@ const BucketList = ({
                           }}
                           onClick={() => handleDelete(volume, index)}
                         >
-                          <MdDelete />
+                          <BsTrashFill className="delete-book" />
                         </button>
                       </div>
                     </div>

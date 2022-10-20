@@ -19,8 +19,8 @@ const ReadList = ({ readList }) => {
                   <p>Page instructions will live here</p>
                 </div>
                 <hr className="dark" />
-                {readList.map((volume) => (
-                  <section className="read-list">
+                <section className="read-list">
+                  {readList.map((volume) => (
                     <div key={volume.id} className="book-card-wrapper">
                       <BookCard
                         title={volume.volumeInfo.title}
@@ -37,8 +37,8 @@ const ReadList = ({ readList }) => {
                         }
                       />
                     </div>
-                  </section>
-                ))}
+                  ))}
+                </section>
               </section>
             ) : (
               <>
