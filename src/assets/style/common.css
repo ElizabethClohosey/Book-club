@@ -216,6 +216,7 @@ button {
 .theme {
   display: flex;
   align-items: center;
+  max-width: 75px;
 }
 
 .toggle-theme {
