@@ -4,7 +4,7 @@ import TextInput from "../form/text-input";
 import BookCard from "../common/book-card";
 import { BsBucketFill } from "react-icons/bs";
 import { FaBook } from "react-icons/fa";
-import { GiOpenBook } from "react-icons/gi";
+// import { GiOpenBook } from "react-icons/gi";
 
 const BookSearch = ({
   handleSearchResults,
