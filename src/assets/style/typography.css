@@ -28,6 +28,7 @@ h2 {
 .app-dark h2 {
   background: var(--purblue);
   color: var(--light);
+  border-bottom: 1px solid var(--light);
 }
 
 h3 {

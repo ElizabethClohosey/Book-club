@@ -26,8 +26,8 @@ const ReadList = ({
   return (
     <section className="section-content">
       <div className="random-book">
-        <p>Trouble choosing a book? Let us choose for you!</p>
-        <p>Book will be chosen from "Book Bucket List"</p>
+        <p>Trouble choosing a book? </p>
+        <p>Let us choose a book from your bucket list for you!</p>
         {/* <form style={{ display: "flex", flexDirection: "column" }}>
           <label>
             <input type="radio" name="random-book"></input>Bucket List Book

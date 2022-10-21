@@ -81,12 +81,12 @@ const BookSearch = ({
       </form>
       <hr className="dark" />
 
-      <div className="list-wrapper">
-        {searchResults && Object.keys(searchResults).length > 0 ? (
-          <section className="search-results-section">
-            <div className="list-instructions">
-              <h3>Search Results</h3>
-              <p>
+      {/* <div className="list-wrapper"> */}
+      {searchResults && Object.keys(searchResults).length > 0 ? (
+        <section className="search-results-section">
+          <div className="list-instructions">
+            <h3>Search Results</h3>
+            {/* <p>
                 <span>
                   <BsBucketFill />
                 </span>
@@ -104,66 +104,66 @@ const BookSearch = ({
                 </span>
                 Adds book to "Read"
               </p>
-              <p>Click on book cover to see more information</p>
-              <hr className="dark" />
-            </div>
-            <section className="search-results">
-              {searchResults.map((volume, index) => (
-                <div key={volume.id} className="book-card-wrapper">
-                  <BookCard
-                    handleClick={() => handleBookClick(volume)}
-                    handleKeyDown={(e) => openModalOnEnter(volume, e)}
-                    title={
-                      volume.volumeInfo.title ? volume.volumeInfo.title : "N/A"
-                    }
-                    author={
-                      volume.volumeInfo.authors
-                        ? volume.volumeInfo.authors[0]
-                        : "N/A"
-                    }
-                    imgSrc={
-                      volume.volumeInfo.imageLinks &&
-                      volume.volumeInfo.imageLinks.thumbnail
-                        ? volume.volumeInfo.imageLinks.thumbnail
-                        : "#"
-                    }
-                  />
-                  <div className="btn-bar">
-                    <button onClick={() => addToBucketList(volume, index)}>
-                      <BsBucketFill />
-                    </button>
-                    <button>
-                      <GiOpenBook
-                        onClick={(e) =>
-                          handleUserMessage({
-                            message: "Functionality coming soon",
-                          })
-                        }
-                      />
-                    </button>
-                    <button>
-                      <FaBook
-                        onClick={(e) =>
-                          handleUserMessage({
-                            message: "Functionality coming soon",
-                          })
-                        }
-                      />
-                    </button>
-                  </div>
+              <p>Click on book cover to see more information</p> */}
+            {/* <hr className="dark" /> */}
+          </div>
+          <section className="search-results">
+            {searchResults.map((volume, index) => (
+              <div key={volume.id} className="book-card-wrapper">
+                <BookCard
+                  handleClick={() => handleBookClick(volume)}
+                  handleKeyDown={(e) => openModalOnEnter(volume, e)}
+                  title={
+                    volume.volumeInfo.title ? volume.volumeInfo.title : "N/A"
+                  }
+                  author={
+                    volume.volumeInfo.authors
+                      ? volume.volumeInfo.authors[0]
+                      : "N/A"
+                  }
+                  imgSrc={
+                    volume.volumeInfo.imageLinks &&
+                    volume.volumeInfo.imageLinks.thumbnail
+                      ? volume.volumeInfo.imageLinks.thumbnail
+                      : "#"
+                  }
+                />
+                <div className="btn-bar">
+                  <button onClick={() => addToBucketList(volume, index)}>
+                    <BsBucketFill />
+                  </button>
+                  <button>
+                    <GiOpenBook
+                      onClick={(e) =>
+                        handleUserMessage({
+                          message: "Functionality coming soon",
+                        })
+                      }
+                    />
+                  </button>
+                  <button>
+                    <FaBook
+                      onClick={(e) =>
+                        handleUserMessage({
+                          message: "Functionality coming soon",
+                        })
+                      }
+                    />
+                  </button>
                 </div>
-              ))}
-            </section>
+              </div>
+            ))}
           </section>
-        ) : (
-          <p>
-            Use the search input above to get started!
-            <br />
-            <br />
-            Your search results will show here.
-          </p>
-        )}
-      </div>
+        </section>
+      ) : (
+        <p>
+          Use the search input above to get started!
+          <br />
+          <br />
+          Your search results will show here.
+        </p>
+      )}
+      {/* </div> */}
     </section>
   );
 };

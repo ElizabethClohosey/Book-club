@@ -4,7 +4,7 @@ import BookCard from "./common/book-card";
 import { FaBook } from "react-icons/fa";
 import { BsTrashFill } from "react-icons/bs";
 import { GiSpellBook } from "react-icons/gi";
-
+import { GiOpenBook } from "react-icons/gi";
 const BucketList = ({
   bucketListBooks,
   handleBookClick,
@@ -35,12 +35,13 @@ const BucketList = ({
   };
   return (
     <section className="section-content">
-      <button className="list-btns" onClick={() => setShowList(!showList)}>
+      {/* <button className="list-btns" onClick={() => setShowList(!showList)}>
         {showList ? "Hide Book Bucket List" : "Show Book Bucket List"}
-      </button>
+      </button> */}
 
       {showList && (
         <div className="list-wrapper">
+          <h3>Book Bucket List</h3>
           <section className="list-section">
             {Object.keys(bucketListBooks).length > 0 ? (
               // <section>
@@ -80,7 +81,7 @@ const BucketList = ({
                         />
                       </button>
                       <button>
-                        <GiSpellBook
+                        <GiOpenBook
                           onClick={(e) =>
                             handleUserMessage({
                               message: "Functionality coming soon",

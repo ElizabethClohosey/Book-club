@@ -17,7 +17,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
         }}
       >
         <img
-          style={{ height: "35px" }}
+          style={{ height: "25px" }}
           src={darkMode ? LogoDark : LogoLight}
           alt="book club bitches text above books"
         />

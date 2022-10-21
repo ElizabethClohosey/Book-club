@@ -71,7 +71,7 @@ footer {
 .app-dark .book-lists-section,
 .app-dark .random-book-section {
   background: var(--black);
-  color: var(--bright);
+  color: var(--light);
   box-shadow: 0 0 5px var(--black);
 }
 
@@ -82,7 +82,7 @@ footer {
   margin-top: 1rem;
 }
 
-.random-book {
+/* .random-book {
   background: whitesmoke;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -91,7 +91,7 @@ footer {
 
 .app-dark .random-book {
   background: var(--darkMode-bg);
-}
+} */
 
 .version {
   position: absolute;
