@@ -132,7 +132,7 @@ const BookSearch = ({
                   <button onClick={() => addToBucketList(volume, index)}>
                     <BsBucketFill />
                   </button>
-                  <button>
+                  {/* <button>
                     <GiOpenBook
                       onClick={(e) =>
                         handleUserMessage({
@@ -140,7 +140,7 @@ const BookSearch = ({
                         })
                       }
                     />
-                  </button>
+                  </button> */}
                   <button>
                     <FaBook
                       onClick={(e) =>
