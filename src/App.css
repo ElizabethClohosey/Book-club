@@ -18,7 +18,7 @@ header {
 }
 
 .app-dark header {
-  background: var(--darkMode-bg);
+  background: var(--black);
   color: var(--bright);
 }
 

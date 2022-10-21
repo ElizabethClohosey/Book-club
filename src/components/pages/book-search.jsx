@@ -102,7 +102,7 @@ const BookSearch = ({
                 <span>
                   <FaBook />
                 </span>
-                Adds book to "Book Bucket List"
+                Adds book to "Read"
               </p>
               <p>Click on book cover to see more information</p>
               <hr className="dark" />
