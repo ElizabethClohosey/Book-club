@@ -5,9 +5,11 @@ import ReadList from "./read-list";
 import RandomBook from "./random-book";
 import UserMessage from "./common/user-message";
 import Modal from "./common/modal";
+import Help from "../components/common/help";
 
 const SinglePageApp = () => {
   const [searchResults, setSearchResults] = useState({});
+  const [showHelp, setShowHelp] = useState(false);
 
   const handleSearchResults = (data) => {
     setSearchResults(data);
@@ -165,6 +167,13 @@ const SinglePageApp = () => {
           hasIcon={userMessage.hasIcon}
         />
       )}
+      <button
+        style={{ position: "absolute", bottom: "0" }}
+        onClick={() => setShowHelp(!showHelp)}
+      >
+        Help
+      </button>
+      {showHelp && <Help />}
       {showModal && (
         <Modal
           modalHeader={

@@ -84,29 +84,10 @@ const BookSearch = ({
       {/* <div className="list-wrapper"> */}
       {searchResults && Object.keys(searchResults).length > 0 ? (
         <section className="search-results-section">
-          <div className="list-instructions">
+          {/* <div className="list-instructions"> */}
             <h3>Search Results</h3>
-            {/* <p>
-                <span>
-                  <BsBucketFill />
-                </span>
-                Adds book to "Book Bucket List"
-              </p>
-              <p>
-                <span>
-                  <GiOpenBook />
-                </span>
-                Adds book to "Current Book Club Book"
-              </p>
-              <p>
-                <span>
-                  <FaBook />
-                </span>
-                Adds book to "Read"
-              </p>
-              <p>Click on book cover to see more information</p> */}
-            {/* <hr className="dark" /> */}
-          </div>
+
+          {/* </div> */}
           <section className="search-results">
             {searchResults.map((volume, index) => (
               <div key={volume.id} className="book-card-wrapper">
