@@ -205,8 +205,8 @@ button {
   background: var(--black);
   border-radius: 1rem;
   position: relative;
-  padding: .15rem 0;
-  max-width: 75px;
+  padding: .15rem;
+  max-width: 50px;
 }
 
 .app-dark .theme-wrapper {
@@ -216,8 +216,8 @@ button {
 .theme {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  max-width: 75px;
+  /* justify-content: space-around; */
+  max-width: 50px;
 }
 
 .toggle-theme {
