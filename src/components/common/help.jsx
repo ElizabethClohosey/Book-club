@@ -1,13 +1,13 @@
 import React from "react";
 import { BsBucketFill } from "react-icons/bs";
 import { FaBook } from "react-icons/fa";
-import { GiOpenBook, GiWhiteBook } from "react-icons/gi";
+import { GiOpenBook } from "react-icons/gi";
 
 const Help = () => {
   return (
     <div
-      style={{ position: "absolute", bottom: "20px", background: 'white', minWidth: '400px', padding: '1rem' }}
-      className="list-instructions"
+      // style={{ position: "absolute", bottom: "20px", background: 'white', minWidth: '400px', padding: '1rem' }}
+      // className="list-instructions"
     >
       <p>
         <span>

@@ -4,8 +4,6 @@
 .list-wrapper {
   background: var(--light);
   padding: 1rem;
-  /* position: absolute;
-  width: 80%; */
 }
 
 .app-dark .list-wrapper {
@@ -58,24 +56,15 @@
 .book-card-wrapper {
   background: white;
   margin-right: 0.5rem;
-  /* width: 6rem;
-  min-width: 6rem; */
   width: 8rem;
   min-width: 8rem;
-  /* border: 1px solid rgb(210, 210, 210); */
   box-shadow: 0 0 5px var(--purblue);
 }
 
 .app-dark .book-card-wrapper {
   background: var(--darkMode-bg);
-  /* border: 1px solid var(--blue-gray); */
   box-shadow: 0 0 5px var(--purblue);
 }
-
-/* .book-card-header {
-  width: 100%;
-  text-align: center;
-} */
 
 .book-card-content {
   background: white;
@@ -85,18 +74,14 @@
 
 .app-dark .book-card-content {
   background: var(--darkMode-bg);
-  /* border-bottom: 1px solid var(--blue-gray); */
 }
 
 .book-card img {
   min-height: 125px;
   height: 135px;
-  /* width: 6rem;
-  max-width: 6rem; */
   width: 8rem;
   max-width: 8rem;
   margin: auto;
-  /* width: 100%; */
 }
 
 .book-card p {
@@ -129,6 +114,7 @@
   width: 90%;
   max-width: 540px;
   margin: auto;
+  border-radius: 0.25rem;
 }
 
 .user-message svg {
@@ -155,13 +141,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
   background: white;
   z-index: 98;
-  padding-top: 60px;
-  /* position: relative; */
   overflow-y: scroll;
-  /* z-index: 999; */
 }
 
 .app-dark .modal-wrapper {
@@ -178,15 +160,11 @@
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
-  /* position: relative; */
   padding: 1rem;
 }
 
 .modal .close-btn {
   align-self: flex-end;
-  /* position: absolute;
-top: 0;
-right: 0; */
 }
 
 .modal-header {
@@ -221,7 +199,6 @@ button {
 
 .theme {
   display: flex;
-  /* align-items: center; */
   justify-content: space-around;
   max-width: 50px;
 }
@@ -285,8 +262,6 @@ button {
 
 .app-dark .btn {
   background: var(--blue-gray);
-  /* color: white; */
-  /* text-shadow: 0px 0px 5px var(--black); */
 }
 
 .btn.responsive {
@@ -302,7 +277,6 @@ button {
   color: var(--purblue);
   font-size: 1.25rem;
   margin-top: 0.5rem;
-  /* padding: .5rem 0; */
 }
 
 .app-dark .btn-bar svg {
@@ -311,6 +285,23 @@ button {
 
 .btn-bar svg.delete-book {
   color: var(--err);
+}
+
+.information-btn {
+  position: fixed;
+  top: 60px;
+  right: 5px;
+  background: var(--purblue);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.information-btn svg {
+  font-size: 2rem;
+  color: var(--light);
 }
 
 @media screen and (min-width: 768px) {

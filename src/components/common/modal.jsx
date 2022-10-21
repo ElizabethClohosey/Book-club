@@ -6,7 +6,9 @@ const Modal = ({ body, modalHeader, modalFooter, handleModalClose }) => {
           Close
         </button>
         <div className="modal-content">
-          <div className="modal-header">{modalHeader}</div>
+          <div className="modal-header">
+            <h1>{modalHeader}</h1>
+          </div>
           <div className="modal-body">{body}</div>
           <div className="modal-footer">{modalFooter}</div>
         </div>

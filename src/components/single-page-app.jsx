@@ -6,10 +6,10 @@ import RandomBook from "./random-book";
 import UserMessage from "./common/user-message";
 import Modal from "./common/modal";
 import Help from "../components/common/help";
+import { HiOutlineInformationCircle } from "react-icons/hi";
 
 const SinglePageApp = () => {
   const [searchResults, setSearchResults] = useState({});
-  const [showHelp, setShowHelp] = useState(false);
 
   const handleSearchResults = (data) => {
     setSearchResults(data);
@@ -83,20 +83,22 @@ const SinglePageApp = () => {
   const [expandedBook, setExpandedBook] = useState({});
   const handleBookClick = (volume) => {
     setExpandedBook(volume);
-    setShowModal(true);
+    setShowBookModal(true);
   };
 
-  const [showModal, setShowModal] = useState(false);
+  const [showBookModal, setShowBookModal] = useState(false);
   const handleModalClose = () => {
-    setShowModal(false);
+    setShowBookModal(false);
+    setShowHelpModal(false);
   };
 
   const openModalOnEnter = (volume, e) => {
     if (e.key === "Enter") {
       setExpandedBook(volume);
-      setShowModal(true);
+      setShowBookModal(true);
     }
   };
+  const [showHelpModal, setShowHelpModal] = useState(false);
 
   const removeFromBucketList = (index) => {
     dispatchBucketList({ type: "DELETE_FROM_BUCKET_LIST", index });
@@ -104,14 +106,14 @@ const SinglePageApp = () => {
 
   useEffect(() => {
     const body = document.querySelector("body");
-    if (showModal) {
+    if (showBookModal || showHelpModal) {
       // Disable scroll
       body.style.overflow = "hidden";
     } else {
       // Enable scroll
       body.style.overflow = "auto";
     }
-  }, [showModal]);
+  }, [showBookModal, showHelpModal]);
 
   return (
     <main>
@@ -122,7 +124,6 @@ const SinglePageApp = () => {
           handleSearchResults={handleSearchResults}
           searchResults={searchResults}
           handleBookClick={handleBookClick}
-          // handleModalClose={handleModalClose}
           openModalOnEnter={openModalOnEnter}
           handleUserMessage={handleUserMessage}
         />
@@ -133,7 +134,6 @@ const SinglePageApp = () => {
         <BucketList
           bucketListBooks={bucketListBooks}
           handleBookClick={handleBookClick}
-          // handleModalClose={handleModalClose}
           openModalOnEnter={openModalOnEnter}
           removeFromBucketList={removeFromBucketList}
           addToReadList={addToReadList}
@@ -142,7 +142,6 @@ const SinglePageApp = () => {
 
         <ReadList
           readList={readList}
-          // handleModalClose={handleModalClose}
           openModalOnEnter={openModalOnEnter}
           handleBookClick={handleBookClick}
         />
@@ -153,7 +152,6 @@ const SinglePageApp = () => {
         <RandomBook
           bucketListBooks={bucketListBooks}
           handleUserMessage={handleUserMessage}
-          // handleModalClose={handleModalClose}
           openModalOnEnter={openModalOnEnter}
           handleBookClick={handleBookClick}
         />
@@ -168,13 +166,15 @@ const SinglePageApp = () => {
         />
       )}
       <button
-        style={{ position: "absolute", bottom: "0" }}
-        onClick={() => setShowHelp(!showHelp)}
+        className="information-btn"
+        onClick={() => setShowHelpModal(!showHelpModal)}
       >
-        Help
+        <HiOutlineInformationCircle />
       </button>
-      {showHelp && <Help />}
-      {showModal && (
+      {showHelpModal && (
+        <Modal modalHeader="Help" body={<Help />} handleModalClose={handleModalClose} />
+      )}
+      {showBookModal && (
         <Modal
           modalHeader={
             <>
