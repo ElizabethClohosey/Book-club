@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import BookCard from "./common/book-card";
 // import { MdDelete } from "react-icons/md";
 import { FaBook } from "react-icons/fa";
 import { BsTrashFill } from "react-icons/bs";
-import { GiSpellBook } from "react-icons/gi";
 import { GiOpenBook } from "react-icons/gi";
 const BucketList = ({
   bucketListBooks,
@@ -13,7 +12,7 @@ const BucketList = ({
   addToReadList,
   handleUserMessage,
 }) => {
-  const [showList, setShowList] = useState(true);
+  // const [showList, setShowList] = useState(true);
 
   const handleRead = (volume, index) => {
     handleUserMessage({
@@ -39,7 +38,7 @@ const BucketList = ({
         {showList ? "Hide Book Bucket List" : "Show Book Bucket List"}
       </button> */}
 
-      {showList && (
+      {/* {showList && ( */}
         <div className="list-wrapper">
           <h3>Book Bucket List</h3>
           <section className="list-section">
@@ -112,7 +111,7 @@ const BucketList = ({
             )}
           </section>
         </div>
-      )}
+      {/* )} */}
     </section>
   );
 };

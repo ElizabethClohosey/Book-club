@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import BookCard from "./common/book-card";
 
 const ReadList = ({ readList, openModalOnEnter, handleBookClick }) => {
-  const [showList, setShowList] = useState(true);
+  // const [showList, setShowList] = useState(true);
   return (
     <section className="section-content">
       {/* <button className="list-btns" onClick={() => setShowList(!showList)}>
         {showList ? "Hide Read List" : "Show Read List"}
       </button> */}
 
-      {showList && (
+      {/* {showList && ( */}
         <div className="list-wrapper">
           <h3>Read List</h3>
           <section className="list-section">
@@ -55,7 +55,7 @@ const ReadList = ({ readList, openModalOnEnter, handleBookClick }) => {
             )}
           </section>
         </div>
-      )}
+      {/* )} */}
     </section>
   );
 };
