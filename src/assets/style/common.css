@@ -205,7 +205,7 @@ button {
   background: var(--black);
   border-radius: 1rem;
   position: relative;
-  padding: 0.15rem;
+  padding: 0 .25rem;
   max-width: 50px;
 }
 
