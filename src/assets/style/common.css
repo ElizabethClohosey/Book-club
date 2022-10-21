@@ -206,6 +206,7 @@ button {
   border-radius: 1rem;
   position: relative;
   padding: .15rem 0;
+  max-width: 75px;
 }
 
 .app-dark .theme-wrapper {
