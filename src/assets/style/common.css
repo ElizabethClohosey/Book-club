@@ -205,7 +205,7 @@ button {
   background: var(--black);
   border-radius: 1rem;
   position: relative;
-  /* padding: .15rem; */
+  padding: .15rem;
   max-width: 50px;
 }
 
@@ -216,7 +216,7 @@ button {
 .theme {
   display: flex;
   align-items: center;
-  /* justify-content: space-around; */
+  justify-content: center;
   /* max-width: 50px; */
 }
 
