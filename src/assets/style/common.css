@@ -218,6 +218,7 @@ button {
   align-items: center;
   justify-content: center;
   max-width: 50px;
+  padding: .15rem;
 }
 
 .toggle-theme {
