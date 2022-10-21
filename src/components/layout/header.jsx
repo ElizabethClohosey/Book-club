@@ -1,7 +1,8 @@
 import React from "react";
-import Logo from "../../assets/images/logo-sm.png";
+import LogoLight from "../../assets/images/logo-light.png";
+import LogoDark from "../../assets/images/logo-dark.png";
 
-const Header = ({ toggleDarkMode }) => {
+const Header = ({ toggleDarkMode, darkMode }) => {
   return (
     <header>
       <div
@@ -15,14 +16,14 @@ const Header = ({ toggleDarkMode }) => {
       >
         <img
           style={{ height: "35px" }}
-          src={Logo}
+          src={darkMode ? LogoDark : LogoLight}
           alt="book club bitches text above books"
         />
         <div className="theme" onClick={toggleDarkMode}>
           <button>Dark</button>
           <button>Light</button>
         </div>
-        <p>Menu</p>
+        {/* <p>Menu</p> */}
       </div>
     </header>
   );

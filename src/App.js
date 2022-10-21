@@ -25,7 +25,7 @@ function App() {
   return (
     // <div className={`App ${darkMode ? "app-dark" : undefined}`}>
     <div className={`App ${darkMode ? "app-dark" : ""}`}>
-      <Header toggleDarkMode={toggleDarkMode} />
+      <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       <SinglePageApp />
       <Version />
       {/* <Home /> */}
