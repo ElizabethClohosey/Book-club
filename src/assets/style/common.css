@@ -217,7 +217,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* max-width: 50px; */
+  max-width: 50px;
 }
 
 .toggle-theme {
