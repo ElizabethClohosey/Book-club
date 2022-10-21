@@ -200,6 +200,52 @@ button {
   cursor: pointer;
 }
 
+.theme-wrapper {
+  border: 3px solid var(--blue-gray);
+  background: var(--black);
+  border-radius: 1rem;
+  position: relative;
+  padding: .15rem 0;
+}
+
+.app-dark .theme-wrapper {
+  border: 3px solid var(--bright);
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-theme {
+  border-radius: 0.5rem;
+  background: var(--blue-gray);
+  border: 1px solid var(--blue-gray);
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: -1px;
+  top: -1px;
+  border-radius: 1rem;
+}
+
+.app-dark .toggle-theme {
+  left: -1px;
+  background: var(--bright);
+  border: 1px solid var(--bright);
+}
+
+.theme button {
+  color: whitesmoke;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.app-dark .theme button {
+  color: yellow;
+}
+
 .list-btns {
   width: 100%;
   padding: 0.5rem 0.25rem;
