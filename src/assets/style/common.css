@@ -17,6 +17,10 @@
   color: var(--purblue);
 }
 
+.app-dark .list-instructions svg {
+  color: var(--light);
+}
+
 .list-instructions p {
   margin-bottom: 0.5rem;
 }
@@ -55,7 +59,13 @@
   margin-right: 0.5rem;
   width: 8rem;
   min-width: 8rem;
-  border: 1px solid rgb(210, 210, 210);
+  /* border: 1px solid rgb(210, 210, 210); */
+}
+
+.app-dark .book-card-wrapper {
+  background: var(--darkMode-bg);
+  /* border: 1px solid var(--blue-gray); */
+  background: var(--black);
 }
 
 .book-card-header {
@@ -67,6 +77,11 @@
   background: white;
   padding: 0.25rem;
   border-bottom: 1px solid rgb(210, 210, 210);
+}
+
+.app-dark .book-card-content {
+  background: var(--black);
+  border-bottom: 1px solid var(--blue-gray);
 }
 
 .book-card img {
@@ -143,6 +158,11 @@
   /* z-index: 999; */
 }
 
+.app-dark .modal-wrapper {
+  background: var(--darkMode-bg);
+  color: var(--bright);
+}
+
 .modal {
   max-width: 768px;
   margin: auto;
@@ -188,6 +208,9 @@ button {
   text-decoration: underline;
 }
 
+.app-dark .list-btns {
+  background: var(--blue-gray);
+}
 .btn {
   background: var(--light);
   padding: 0.5rem;
@@ -217,6 +240,10 @@ button {
   font-size: 1.25rem;
   margin-top: 0.5rem;
   /* padding: .5rem 0; */
+}
+
+.app-dark .btn-bar svg {
+  color: var(--bright);
 }
 
 .btn-bar svg.delete-book {

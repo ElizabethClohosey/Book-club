@@ -4,7 +4,7 @@ import TextInput from "../form/text-input";
 import BookCard from "../common/book-card";
 import { BsBucketFill } from "react-icons/bs";
 import { FaBook } from "react-icons/fa";
-import { GiSpellBook } from "react-icons/gi";
+import { GiOpenBook } from "react-icons/gi";
 
 const BookSearch = ({
   handleSearchResults,
@@ -94,7 +94,7 @@ const BookSearch = ({
               </p>
               <p>
                 <span>
-                  <GiSpellBook />
+                  <GiOpenBook />
                 </span>
                 Adds book to "Current Book Club Book"
               </p>
@@ -133,7 +133,7 @@ const BookSearch = ({
                       <BsBucketFill />
                     </button>
                     <button>
-                      <GiSpellBook
+                      <GiOpenBook
                         onClick={(e) =>
                           handleUserMessage({
                             message: "Functionality coming soon",

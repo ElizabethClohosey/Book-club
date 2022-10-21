@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.App.app-dark {
+  background: var(--purblue);
+}
+
 /* Layout  */
 header {
   background: var(--bright);

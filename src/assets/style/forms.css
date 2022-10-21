@@ -7,10 +7,10 @@ input[type="text"] {
     /* background: var(--purblue); */
 }
 
-/* .app-dark input[type="text"] {
+.app-dark input[type="text"] {
   background: rgb(42, 42, 42);
   color: var(--light);
-} */
+}
 
 
 

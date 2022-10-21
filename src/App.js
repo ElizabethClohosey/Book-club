@@ -12,7 +12,6 @@ import Version from "./components/common/version";
 import "./App.css"
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  console.log(darkMode);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
